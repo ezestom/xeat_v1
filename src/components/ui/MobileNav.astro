@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import openBurger from "../../icons/openBurger.svg";
 import closeBurger from "../../icons/close.svg";
 import instagram from "../../icons/instagram.svg";
+import logo from "../../img/logo.png";
 ---
 
 <dialog>
@@ -20,15 +20,15 @@ import instagram from "../../icons/instagram.svg";
 				</form>
 			</li>
 			<li>
+				<a class="max-w-24" href="/">
+					<img src={logo.src} alt="logo " />
+				</a>
+			</li>
+			<li>
 				<a class="a" href="/burgers">
 					<span class="hover-animation">burgers</span></a
 				>
 			</li>
-			<!-- <li>
-				<a class="a" href="gift">
-					<span class="hover-animation">regalos</span></a
-				>
-			</li> -->
 			<li>
 				<a class="a pointer-events-none opacity-50" href="fries">
 					<span class="hover-animation">fries</span></a
@@ -63,12 +63,12 @@ import instagram from "../../icons/instagram.svg";
 				</a>
 			</li>
 		</nav>
-		<span class="mx-auto inline-block">
+		<span class="mx-auto inline-block w-full">
 			<a href="https://www.instagram.com/">
 				<img
 					src={instagram.src}
 					alt="instagram logo"
-					class="hover:rotate-180 transition"
+					class="hover:rotate-180 hover:scale-115 transition mx-auto"
 				/>
 			</a>
 		</span>
@@ -76,7 +76,7 @@ import instagram from "../../icons/instagram.svg";
 </dialog>
 
 <section
-	class="fixed bg-[--white3] h-[104px] border-black w-full border-b z-50 flex">
+	class="fixed bg-[--white3] h-[104px] border-black w-full border-b flex z-50">
 	<button
 		class="burger-btn"
 		onclick="document.querySelector('dialog').showModal()">
@@ -133,6 +133,7 @@ import instagram from "../../icons/instagram.svg";
 		z-index: 30;
 		width: 100%;
 		height: 100vh;
+		outline: 2rem solid var(--white3);
 	}
 	.burger-btn {
 		background-color: transparent;
@@ -140,9 +141,6 @@ import instagram from "../../icons/instagram.svg";
 		cursor: pointer;
 	}
 	.burger-btn img {
-		width: 50px;
-	}
-	.close-btn {
 		width: 50px;
 	}
 
