@@ -2,10 +2,10 @@
 import crew from "../../img/crew.png";
 ---
 
-<section class="flex justify-around bg-[--black] items-center">
+<section class="flex justify-around bg-[--black] items-center w-full">
 	<article
-		class="flex flex-col justify-start items-start text-[--white3] p-32">
-		<p class="text-4xl text-balance max-w-[50ch]">
+		class="flex flex-col justify-center md:justify-start items-center text-center md:text-start md:items-start text-[--white3] md:p-32">
+		<p class="text-4xl text-balance md:max-w-[50ch] pt-10 md:pt-0">
 			Eres un Xeater! Síguenos en Instagram y forma parte de la RealCrew.
 		</p>
 		<button
@@ -13,5 +13,16 @@ import crew from "../../img/crew.png";
 			@realcrew.burgers
 		</button>
 	</article>
-	<img src={crew.src} alt="crew logo" class="max-w-72 m-32" />
+	<img src={crew.src} alt="crew logo" class="max-w-40 md:max-w-72 m-16 md:m-32" />
 </section>
+
+<style>
+	@media (max-width: 1150px) {
+		section {
+			flex-direction: column;
+		}
+		article {
+			width: 100%;
+		}
+	}
+</style>

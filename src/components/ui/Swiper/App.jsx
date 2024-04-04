@@ -29,11 +29,23 @@ export function App({
 	return (
 		<>
 			<Swiper
-				slidesPerView={3}
+				// slidesPerView={3}
 				spaceBetween={1}
 				freeMode={true}
 				pagination={{
 					clickable: true,
+				}}
+				breakpoints={{
+					640: {
+						slidesPerView: 1,
+						spaceBetween: 10,
+					},
+					768: {
+						slidesPerView: 2,
+					},
+					1024: {
+						slidesPerView: 3
+					},
 				}}
 				modules={[FreeMode, Pagination]}
 				className="mySwiper">

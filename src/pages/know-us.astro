@@ -1,0 +1,84 @@
+---
+import AppHeader from "../components/ui/AppHeader.astro";
+import Slider from "../components/ui/Slider.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import img from "../img/smiling.jpg";
+import Instagram from "../components/sections/Instagram.astro";
+import FooterSection from "../components/sections/FooterSection.astro";
+---
+
+<Layout title="Conocénos - 🍔 los mejores">
+	<AppHeader />
+	<div class="pt-24">
+		<Slider text="somos" text2="xeat" />
+	</div>
+	<section
+		class="flex flex-col md:flex-row bg-[--white3] border-b border-[black] h-full">
+		<article class="flex flex-col m-auto w-full md:w-1/2">
+			<div class="max-w-[75%] mx-auto h-full">
+				<h1
+					class="text-4xl uppercase text-black leading-[0.9] font-semibold my-5">
+					XEAT THINKING
+				</h1>
+				<p class="pt-10">
+					<strong
+						>Queremos ser la hamburguesería delivery que os haga
+						disfrutar.</strong
+					> De la comida, de los amigos, del momento, de los postres, de
+					la peli de netflix. Y también queremos ser la mejor manera de
+					saltarte la dieta, el premio al salir del gimnasio o la cena
+					que no quieres preparar.
+				</p>
+
+				<p class="pt-10">
+					<strong
+						>Queremos ser la hamburguesería delivery que os haga
+						disfrutar.</strong
+					> De la comida, de los amigos, del momento, de los postres, de
+					la peli de netflix. Y también queremos ser la mejor manera de
+					saltarte la dieta, el premio al salir del gimnasio o la cena
+					que no quieres preparar.
+				</p>
+
+				<p class="pt-10">
+					<strong
+						>Queremos ser la hamburguesería delivery que os haga
+						disfrutar.</strong
+					> De la comida, de los amigos, del momento, de los postres, de
+					la peli de netflix. Y también queremos ser la mejor manera de
+					saltarte la dieta, el premio al salir del gimnasio o la cena
+					que no quieres preparar.
+				</p>
+
+				<p class="py-10">
+					<strong>Xeat recomienda una dieta</strong>variada y <strong
+						>equilibrada
+					</strong> y un estilo de vida saludable. 😉
+				</p>
+			</div>
+		</article>
+		<article class="w-full md:w-1/2">
+			<div class="container">
+				<Image class="photo" src={img} alt=`image of ${img}` />
+			</div>
+		</article>
+	</section>
+	<Instagram />
+	<FooterSection />
+</Layout>
+
+<style>
+	.container {
+		/* position: relative; */
+		width: 100%;
+		height: 100%;
+	}
+	.photo {
+		/* position: absolute; */
+		animation: round var(--total-animation-time) infinite;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>

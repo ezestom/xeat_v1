@@ -19,17 +19,17 @@ import instagram from "../../icons/instagram.svg";
 			</li>
 
 			<li>
-				<a class="a" href="fries">
+				<a class="a pointer-events-none opacity-50" href="fries">
 					<span class="hover-animation">fries</span></a
 				>
 			</li>
 			<li>
-				<a class="a" href="cakes">
+				<a class="a pointer-events-none opacity-50" href="cakes">
 					<span class="hover-animation">cakes</span></a
 				>
 			</li>
 			<li>
-				<a class="a" href="the-meat">
+				<a class="a pointer-events-none opacity-50" href="the-meat">
 					<span class="hover-animation">the meat</span>
 				</a>
 			</li>
@@ -39,14 +39,16 @@ import instagram from "../../icons/instagram.svg";
 				</a>
 			</li>
 			<li>
-				<button
-					class="uppercase text-nowrap bg-[red] rounded-full hover:bg-red-600 transition py-2 px-4 text-white">
+				<a
+					target="_blank"
+					href="https://www.mercadolibre.com"
+					class="uppercase text-nowrap bg-[red] rounded-full text-[--white3] hover:bg-red-600 transition py-2 px-4 inline-block">
 					hacer pedido
-				</button>
+				</a>
 			</li>
 			<li>
-				<a class="a" href="invierte">
-					<span class="hover-animation">invierte</span>
+				<a class="a" href="faqs">
+					<span class="hover-animation">faqs</span>
 				</a>
 			</li>
 		</nav>
@@ -93,7 +95,7 @@ import instagram from "../../icons/instagram.svg";
 		list-style: none;
 		font-size: 1rem;
 	}
-	li a {
+	li .a {
 		color: black;
 		text-decoration: none;
 		margin-inline: 1rem;
@@ -139,9 +141,9 @@ import instagram from "../../icons/instagram.svg";
 	}
 
 	/* hover animaation */
-	@media (max-width: 1200px) {
+	@media (max-width: 1150px) {
 		header section {
-			/* display: none; */
+			display: none;
 		}
 	}
 </style>

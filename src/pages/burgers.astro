@@ -1,0 +1,49 @@
+---
+import AppHeader from "../components/ui/AppHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import Slider from "../components/ui/Slider.astro";
+import { App } from "../components/ui/Swiper/App.jsx";
+import img1 from "../img/burger.png";
+import img2 from "../img/burger2.png";
+import FooterSection from "../components/sections/FooterSection.astro";
+import Instagram from "../components/sections/Instagram.astro";
+---
+
+<Layout title="Nuestras Burgers 🍔">
+	<AppHeader />
+	<div class="pt-24">
+		<Slider text="nuestras" text2="burgers" />
+	</div>
+	<App
+		img1={img1.src}
+		title1="burger"
+		description1="$15.50"
+		img2={img1.src}
+		title2="burger"
+		description2="$12.30"
+		img3={img1.src}
+		title3="burger"
+		description3="$10.00"
+		img4={img1.src}
+		title4="burger"
+		description4="$15.50 "
+		client:visible
+	/>
+	<App
+		img1={img2.src}
+		title1="burger"
+		description1="$15.50"
+		img2={img2.src}
+		title2="burger"
+		description2="$12.30"
+		img3={img2.src}
+		title3="burger"
+		description3="$10.00"
+		img4={img2.src}
+		title4="burger"
+		description4="$15.50"
+		client:visible
+	/>
+	<Instagram />
+	<FooterSection />
+</Layout>

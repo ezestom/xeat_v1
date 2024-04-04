@@ -1,0 +1,148 @@
+---
+import AppHeader from "../components/ui/AppHeader.astro";
+import Slider from "../components/ui/Slider.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import img from "../img//burger-hero5.jpg";
+import Instagram from "../components/sections/Instagram.astro";
+import FooterSection from "../components/sections/FooterSection.astro";
+---
+
+<Layout title="Conocénos - 🍔 los mejores">
+	<AppHeader />
+	<div class="pt-24">
+		<Slider text="preguntas&" text2="respuestas" />
+	</div>
+	<section
+		class="flex flex-col md:flex-row bg-[--white3] border-b border-[black] h-full">
+		<article class="flex flex-col m-auto w-full md:w-1/2">
+			<div class="max-w-[95%] md:max-w-[75%] mx-auto h-full">
+				<h1
+					class="text-4xl uppercase text-black leading-[0.9] font-semibold mb-10">
+					Preguntas frecuentes y respuestas sobre Xeat
+				</h1>
+				<article>
+					<details name="faqs" open>
+						<summary>¿Dónde están los locales RUDY?</summary>
+						<p>
+							¡Hey! Tenemos tres locales: uno en Pocitos (26 de
+							Marzo 3471), otro en Punta Carretas (Guipúzcoa 332)
+							y otro en Carrasco (Divina Comedia 1740).
+						</p>
+					</details>
+					<details name="faqs">
+						<summary>Horarios</summary>
+						<p>
+							Los tres locales abren todos los días de 12:00 a
+							15:30 y 19:15 a 23:30. Excepto los viernes y sábados
+							que tiramos hasta las 00:30.
+						</p>
+					</details>
+					<details name="faqs">
+						<summary>¿Dónde tengo que retirar mi pedido?</summary>
+						<p>
+							Tu pedido lo retirás en el local que hayas
+							seleccionado. Si elegiste RUDY Pocitos, en: 26 de
+							Marzo 3471. Si elegiste RUDY Punta Carretas, en:
+							Guipúzcoa 332. Si elegiste Rudy Carrasco, en: Divina
+							Comedia 1740.
+						</p>
+					</details>
+					<details name="faqs">
+						<summary>¿Puedo pagar online?</summary>
+						<p>
+							Por el momento no. Haces tu pedido online y pagas en
+							el local al cual vas a buscar tu pedido. Lo único
+							que tiene pago online son los vales regalo, que solo
+							se pueden pagar online si se compran en la tienda de
+							regalos online.
+						</p>
+					</details>
+					<details name="faqs">
+						<summary>¿Qué métodos de pago aceptan?</summary>
+						<p>
+							Aceptamos varios métodos de pago para que elijas el
+							que más te sirva: efectivo, VISA, Master, tickets
+							alimentación, American Express, OCA y MercadoPago.
+						</p>
+					</details>
+					<details name="faqs">
+						<summary
+							>¿Cuánto tiempo tengo que esperar para ir a retirar
+							mi pedido?</summary
+						>
+						<p>
+							Una vez que hagas tu pedido te va a llegar un mail
+							confirmándote que el pedido fue realizado
+							correctamente y a los minutos un siguiente mail
+							confirmándote que el pedido ya está siendo preparado
+							en el local y diciéndote en cuánto queda pronto.El
+							tiempo de espera habitualmente es de 15 a 25 minutos
+							- el tiempo justo para que puedas venir corriendo a
+							buscar tus burgers-.
+						</p>
+					</details>
+
+					<details name="faqs">
+						<summary>¿Hacen envíos?</summary>
+						<p>
+							Hacemos envíos pero solo a través de Pedidos Ya.
+							Todos los pedidos por la web son para takeway :)
+							Esto significa que: hacés tu pedido, te contamos
+							cuándo queda pronto y lo venís a buscar por
+							cualquiera de nuestros locales.
+						</p>
+					</details>
+					<details name="faqs">
+						<summary>¿Cómo es la burger vegetariana?</summary>
+						<p>
+							Muy rica. En serio. La mezcla es de boniato
+							zanahoria y garbanzos. Y de toppings podés elegir:
+							alioli, palta, rúcula, cebolla, tomate y muzzarella.
+						</p>
+					</details>
+					<details name="faqs">
+						<summary
+							>¿La veggie burger es apta para veganos?</summary
+						>
+						<p>Por el momento, no. La mezcla incluye lácteos.</p>
+					</details>
+					<details name="faqs">
+						<summary>¿Puedo pedir la hamburguesa sin pan?</summary>
+						<p>
+							La respuesta es sí. Podés pedir tu burger sin pan y
+							viene con los toppings como ensalada aparte.
+						</p>
+					</details>
+				</article>
+			</div>
+		</article>
+		<article class="w-full md:w-1/2">
+			<div class="container">
+				<Image class="photo" src={img} alt=`image of ${img}` />
+			</div>
+		</article>
+	</section>
+	<Instagram />
+	<FooterSection />
+</Layout>
+
+<style>
+	.container {
+		width: 100%;
+		height: 100%;
+	}
+	.photo {
+		animation: round var(--total-animation-time) infinite;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	details {
+		margin-bottom: 0.5rem;
+		/* add styles */
+		padding: 0.5rem;
+		background-color: var(--white3);
+		box-shadow: 0 0 0 0.1px var(--black);
+	}
+</style>
