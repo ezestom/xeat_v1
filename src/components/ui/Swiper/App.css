@@ -1,0 +1,37 @@
+body {
+	min-height: 500px;
+	background: var(--white3);
+	color: #000;
+}
+.swiper {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #000;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 1rem;
+	background: var(--white3);
+	width: 100vw;
+	height: 100vh;
+	border-right: 1px solid #000;
+	/* Center slide text vertically */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.swiper-slide h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+.swiper-slide p {
+	font-size: 1.15rem;
+	text-wrap: balance;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

@@ -1,0 +1,97 @@
+---
+interface Slider {
+	text: string;
+	text2: string;
+}
+const { text, text2 } = Astro.props;
+---
+
+<article class="text-8xl bg-[--white3] py-10 overflow-hidden">
+	<div class="slider-container">
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+		<p class="mx-8 font-semibold uppercase flex">
+			<span class="empty-text">{text}</span>
+			{text2}
+		</p>
+		<span> * </span>
+	</div>
+</article>
+
+<style>
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 100vw;
+		animation: slide 50s linear infinite;
+	}
+
+	@keyframes slide {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+
+	.empty-text {
+		color: rgba(0, 0, 0, 0); /* Hace el texto transparente */
+		-webkit-text-stroke: 1px var(--black); /* Añade un borde negro */
+		text-stroke-width: 1px; /* Establece el ancho del borde */
+	}
+</style>

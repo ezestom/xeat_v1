@@ -1,0 +1,26 @@
+---
+import ComboSelect from "../components/sections/ComboSelect.astro";
+import FoodSelect from "../components/sections/FoodSelect.astro";
+import Hero from "../components/sections/Hero.astro";
+import Instagram from "../components/sections/Instagram.astro";
+import Promotion from "../components/sections/Promotion.astro";
+import Layout from "../layouts/Layout.astro";
+import FooterSection from "../components/sections/FooterSection.astro";
+---
+
+<Layout title="Bienvenido a Xeat 🍔">
+	<header>
+		<Hero />
+	</header>
+	<main>
+		<FoodSelect />
+		<Promotion />
+		<ComboSelect />
+	</main>
+	<footer>
+		<Instagram />
+		<FooterSection />
+	</footer>
+</Layout>
+
+<style></style>

@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import logoBurger from "../../img/logo-burger.png";
+import burger from "../../img/burger.png";
+import backgroundBurger from "../../img/burger-hero.jpg";
+---
+
+<section class="">
+	<article class="flex border border-black max-h-[50vh]">
+		<aside class="flex justify-around items-center w-full bg-[--black]">
+			<div class="max-w-2/3 text-center text-[--white3] p-20">
+				<h3 class="text-5xl md:text-8xl">Esto sí es una <br /> GOOD XEAT</h3>
+				<p class="text-xl">
+					Todas nuestras carnes son de calidad certificada.
+				</p>
+			</div>
+			<img
+				src={logoBurger.src}
+				alt="logo burger"
+				class="objet-cover w-1/6"
+			/>
+		</aside>
+		<div class="w-1/3 relative overflow-hidden">
+			<Image
+				src={burger}
+				alt="burger image"
+				class="absolute -top-12 left-0 scale-[1.75]"
+			/>
+		</div>
+	</article>
+	<article class="flex border border-black max-h-[50vh]">
+		<aside class="flex justify-around items-center w-full">
+			<div class="w-1/2" id="background"></div>
+			<div class="w-1/2 p-20">
+				<h3 class="text-8xl">CHIT, SIT, CHEAT...</h3>
+				<p class="text-4xl">
+					Nos da igual cómo lo pronuncies. <br> A nosotros lo que nos
+					importa es el saboooor.
+				</p>
+			</div>
+		</aside>
+	</article>
+</section>
+
+<style>
+	#background {
+		background-image: url("../../img/burger-hero.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 100%;
+		z-index: 10;
+	}
+</style>

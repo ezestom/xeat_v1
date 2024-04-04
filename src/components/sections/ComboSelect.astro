@@ -1,0 +1,27 @@
+---
+import { App } from "../ui/Swiper/App.jsx";
+import img1 from "../../img/burger.png";
+import img2 from "../../img/fries.png";
+import img3 from "../../img/pie.png";
+import img4 from "../../img/burger2.png";
+import Slider from "../ui/Slider.astro";
+---
+
+<section class="min-h-screen">
+	<Slider text="real" text2="combo" />
+	<App
+		client:visible
+		img4={img4.src}
+		title4="burgers"
+		description4="Todas nuestras carnes son de calidad certificada. Con el sabor no se juega. "
+		img3={img3.src}
+		title3="cakes"
+		description3="Sabemos que eres un@. Aquí encontrarás los mejores postres para endulzar tu día a día."
+		img2={img2.src}
+		title2="fries"
+		description2="La compañía perfecta. Patatas caseras y naturales. Elije entre classics, cheddar y veggies."
+		img1={img1.src}
+		title1="burgers"
+		description1="Todas nuestras carnes son de calidad certificada. Con el sabor no se juega."
+	/>
+</section>
