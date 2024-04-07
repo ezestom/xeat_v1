@@ -13,15 +13,19 @@ import "./App.css";
 import { FreeMode, Pagination } from "swiper/modules";
 
 export function App({
+	href1,
 	img1,
 	title1,
 	description1,
+	href2,
 	img2,
 	title2,
 	description2,
+	href3,
 	img3,
 	title3,
 	description3,
+	href4,
 	img4,
 	title4,
 	description4,
@@ -44,37 +48,53 @@ export function App({
 						slidesPerView: 2,
 					},
 					1024: {
-						slidesPerView: 3
+						slidesPerView: 3,
 					},
 				}}
 				modules={[FreeMode, Pagination]}
 				className="mySwiper">
 				<SwiperSlide>
-					<a href="#">
+					<a href={href1}>
 						<img src={img1} alt={`image of ${img1}`} />
-						<h1>{title1}</h1>
-						<p>{description1}</p>
+						<div className="text">
+							<h1 className="text-2xl md:text-3xl font-bold">
+								{title1}
+							</h1>
+							<p className="text-xl pt-2">{description1}</p>
+						</div>
 					</a>
 				</SwiperSlide>
 				<SwiperSlide>
-					<a href="#">
+					<a href={href2}>
 						<img src={img2} alt={`image of ${img2}`} />
-						<h1>{title2}</h1>
-						<p>{description2}</p>
+						<div className="text">
+							<h1 className="text-2xl md:text-3xl font-bold">
+								{title2}
+							</h1>
+							<p className="text-xl pt-2">{description2}</p>
+						</div>
 					</a>
 				</SwiperSlide>
 				<SwiperSlide>
-					<a href="#">
+					<a href={href3}>
 						<img src={img3} alt={`image of ${img3}`} />
-						<h1>{title3}</h1>
-						<p>{description3}</p>
+						<div className="text">
+							<h1 className="text-2xl md:text-3xl font-bold">
+								{title3}
+							</h1>
+							<p className="text-xl pt-2 ">{description3}</p>
+						</div>
 					</a>
 				</SwiperSlide>
 				<SwiperSlide>
-					<a href="#">
+					<a href={href4}>
 						<img src={img4} alt={`image of ${img4}`} />
-						<h1>{title4}</h1>
-						<p>{description4}</p>
+						<div className="text">
+							<h1 className="text-2xl md:text-3xl font-bold">
+								{title4}
+							</h1>
+							<p className="text-xl pt-2 ">{description4}</p>
+						</div>
 					</a>
 				</SwiperSlide>
 			</Swiper>

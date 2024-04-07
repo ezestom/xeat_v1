@@ -6,7 +6,7 @@ body {
 .swiper {
 	width: 100%;
 	height: 100%;
-	border: 1px solid #000;
+	border-bottom: 1px solid var(--white3);
 }
 .swiper-slide {
 	text-align: center;
@@ -19,13 +19,31 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+}
+.swiper-slide img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.text {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	margin-inline: auto;
+	left: 0;
+	right: 0;
+	background-color: black;
+	color: white;
+	padding-block: 1.5rem;
 }
 .swiper-slide h1 {
-	font-size: 3rem;
 	text-transform: uppercase;
 }
 .swiper-slide p {
-	font-size: 1.15rem;
 	text-wrap: balance;
 }
 

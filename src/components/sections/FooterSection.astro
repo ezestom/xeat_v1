@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../../img/logo.png";
 const response = await fetch(
 	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
 );
@@ -9,7 +7,7 @@ const data = await response.json();
 
 <section class="flex items-center bg-[--white3]">
 	<p
-		class="text-4xl my-2 md:text-7xl uppercase whitespace-nowrap font-black m-auto text-center w-full ">
+		class="text-4xl my-2 md:text-7xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
 		{data.nombre}
 	</p>
 
@@ -18,26 +16,35 @@ const data = await response.json();
 		<div
 			class="flex flex-col md:flex-row items-start gap-5 md:gap-10 flex-wrap">
 			<ul class="">
-				<h3 class="uppercase text-3xl">real food</h3>
-				<li class="md:py-3 hover:underline"><a href="#">Burgers</a></li>
+				<h3 class="uppercase text-3xl">tbv</h3>
 				<li class="md:py-3 hover:underline">
-					<a href="#">Fries&Cakes</a>
+					<a href="/burgers">Burgers</a>
 				</li>
 				<li class="md:py-3 hover:underline">
-					<a href="#">Hacer pedido</a>
+					<a href="/fies">Fries</a>
+				</li>
+				<li class="md:py-3 hover:underline">
+					<a href={data.tienda_url}>Hacer pedido</a>
 				</li>
 			</ul>
 
 			<ul class="">
 				<h3 class="uppercase text-3xl">contacto</h3>
 				<li class="md:py-3 hover:underline">
-					<a href="#">Invierte en Xeat</a>
+					<a type="phone" href={`tel:${data.phone}`}>Teléfono</a>
 				</li>
 				<li class="md:py-3 hover:underline">
-					<a href="#">real@xeatburgers.com</a>
+					<a
+						target="_blank"
+						href={`https://wa.me/${data.whatsapp.numero}`}
+						>Whatsapp</a
+					>
 				</li>
 				<li class="md:py-3 hover:underline">
-					<a href="#">orders@xeatburgers.com</a>
+					<a
+						href={`https://www.instagram.com/${data.redes_sociales[0].instagram.slice(1)}`}
+						target="_blank">Instagram</a
+					>
 				</li>
 			</ul>
 
@@ -55,8 +62,8 @@ const data = await response.json();
 			</ul>
 		</div>
 		<a target="_blank" href="#" class="hover:underline mt-5"
-			>2024 © TBV - THE BURGER VILAS  </a
-		>
+			>2024 © TBV - THE BURGER VILAS
+		</a>
 	</article>
 </section>
 
