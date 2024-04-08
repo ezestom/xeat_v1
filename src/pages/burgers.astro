@@ -7,6 +7,11 @@ import img1 from "../img/burger.png";
 import img2 from "../img/burger2.png";
 import FooterSection from "../components/sections/FooterSection.astro";
 import Instagram from "../components/sections/Instagram.astro";
+
+const response = await fetch(
+	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
+);
+const data = await response.json();
 ---
 
 <Layout title="Nuestras Burgers 🍔">
@@ -16,38 +21,38 @@ import Instagram from "../components/sections/Instagram.astro";
 	</div>
 	<App
 		href1="#"
-		img1={img1.src}
+		img1={data.slider_productos[1].imagen}
 		title1="burger"
 		description1="$15.50"
 		href2="#"
-		img2={img1.src}
+		img2={data.slider_productos[1].imagen}
 		title2="burger"
 		description2="$12.30"
 		href3="#"
-		img3={img1.src}
+		img3={data.slider_productos[1].imagen}
 		title3="burger"
 		description3="$10.00"
 		href4="#"
-		img4={img1.src}
+		img4={data.slider_productos[1].imagen}
 		title4="burger"
 		description4="$15.50 "
 		client:visible
 	/>
 	<App
 		href1="#"
-		img1={img2.src}
+		img1={data.slider_productos[2].imagen}
 		title1="burger"
 		description1="$15.50"
 		href2="#"
-		img2={img2.src}
+		img2={data.slider_productos[2].imagen}
 		title2="burger"
 		description2="$12.30"
 		href3="#"
-		img3={img2.src}
+		img3={data.slider_productos[2].imagen}
 		title3="burger"
 		description3="$10.00"
 		href4="#"
-		img4={img2.src}
+		img4={data.slider_productos[2].imagen}
 		title4="burger"
 		description4="$15.50"
 		client:visible
