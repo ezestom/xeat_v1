@@ -2,7 +2,6 @@
 import AppHeader from "../components/ui/AppHeader.astro";
 import Slider from "../components/ui/Slider.astro";
 import Layout from "../layouts/Layout.astro";
-import img from "../img/smiling.jpg";
 import Instagram from "../components/sections/Instagram.astro";
 import FooterSection from "../components/sections/FooterSection.astro";
 
@@ -35,7 +34,7 @@ const data = await response.json();
 				<img
 					class="photo"
 					src={data.nosotros.url_imagen}
-					alt=`image of ${img}`
+					alt=`image of ${data.nosotros.url_imagen}`
 				/>
 			</div>
 		</article>

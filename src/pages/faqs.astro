@@ -3,7 +3,7 @@ import AppHeader from "../components/ui/AppHeader.astro";
 import Slider from "../components/ui/Slider.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import img from "../img//burger-hero5.jpg";
+import img from "../img/hero-4.png";
 import Instagram from "../components/sections/Instagram.astro";
 import FooterSection from "../components/sections/FooterSection.astro";
 
@@ -56,6 +56,7 @@ const data = await response.json();
 	.container {
 		width: 100%;
 		height: 100%;
+		filter:brightness(1.5)
 	}
 	.photo {
 		animation: round var(--total-animation-time) infinite;
