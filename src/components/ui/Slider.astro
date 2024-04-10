@@ -2,85 +2,82 @@
 interface Slider {
 	text: string;
 	text2: string;
+	style: string;
 }
-const { text, text2 } = Astro.props;
+const { text, text2, style } = Astro.props;
 ---
 
-<article class="text-5xl md:text-8xl bg-[--white3] py-5 md:py-8 overflow-hidden">
+<article class="text-5xl md:text-8xl py-5 md:py-8 overflow-hidden">
 	<div class="slider-container">
-		<p class="mx-8 font-semibold uppercase flex">
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
-		<p class="mx-8 font-semibold uppercase flex">
+		<span> ● </span>
+		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{text2}
 		</p>
-		<span> * </span>
+		<span> ● </span>
 	</div>
 </article>
 
 <style>
-	article {
-		border-bottom: 1px solid var(--black);
-		border-top: 1px solid var(--black);
-	}
 	div {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		max-width: 100vw;
+		width: 100%;
 		animation: slide 50s linear infinite;
 	}
 

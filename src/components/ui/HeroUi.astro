@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import triple from "../../img/triple.png";
+import Slider from "../ui/Slider.astro";
 import img from "../../img/hero-1.png";
 import img2 from "../../img/hero-2.png";
 import img3 from "../../img/hero-3.png";
@@ -7,34 +9,52 @@ import img4 from "../../img/hero-4.png";
 import img5 from "../../img/hero-5.png";
 ---
 
-<section
-	class="grid grid-cols-1 justify-center xl:grid-cols-2 h-screen bg-[--white3] border-b border-[black]">
-	<article class="flex flex-col m-auto">
-		<div class="max-w-[75%] mx-auto pt-10 md:pt-0 h-full">
-			<h2
-				class="text-5xl md:text-[6vw] uppercase text-black leading-[0.9] font-semibold">
-				HACEMOS TUS SMASH BURGERS FAVORITAS.
-			</h2>
-
-			<a
-				class="text-xl md:text-[2.5vw] uppercase hover:underline text-center bg-[--black] text-[--white3] px-5 md:py-5 md:px-10 inline-block w-full md:w-auto"
-				href="/burgers">
-				PEDÍ TU TBV !
-			</a>
-		</div>
-	</article>
-	<article>
-		<div class="container">
+<section class="grid grid-cols-1 justify-center xl:grid-cols-2 h-screen overflow-hidden">
+	<article class="my-auto">
+		<Image class="burger" src={triple} alt=`image of ${img}` />
+		<!-- <div class="container">
 			<Image class="photo" src={img} alt=`image of ${img}` />
 			<Image class="photo" src={img2} alt=`image of ${img2}` />
 			<Image class="photo" src={img3} alt=`image of ${img3}` />
 			<Image class="photo" src={img4} alt=`image of ${img4}` />
 			<Image class="photo" src={img5} alt=`image of ${img5}` />
+		</div> -->
+	</article>
+	<article class="flex flex-col m-auto">
+		<div class="flex flex-col justify-center h-full gap-8 items-center">
+			<h2
+				class="text-5xl md:text-[5vw] text-nowrap px-4 py-2 uppercase font-black text-black bg-[red]">
+				cuarto vilas
+			</h2>
+			<p class="text-center px-4">
+				<span class="text-3xl text-[--black]"
+					>Mayonesa, Ketchup, Mostaza y Papitas Pay</span
+				>
+			</p>
+			<p class="text-center px-4">
+				<span
+					class="text-3xl text-[--black] font-light italic opacity-50"
+					>Simple con fritas o aros de cebolla</span
+				>
+			</p>
+
+			<a
+				class="text-3xl md:text-[2.5vw] uppercase hover:underline text-center bg-[--black] text-[--white3] font-bold px-5 flex py-5 md:px-10 items-center justify-center"
+				href="/smashburgers">
+				pedila ya !
+			</a>
 		</div>
 	</article>
+	<div class="w-screen overflow-hidden max-w-screen">
+		<Slider text="the burger vilas" text2="smashbuergers since 2020" />
+	</div>
 </section>
 
 <style>
+
+	.burger {
+		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+	}
 	/* Define variables */
 	:root {
 		--slides: 5;
