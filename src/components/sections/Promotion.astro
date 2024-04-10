@@ -55,15 +55,12 @@ const data = await response.json();
 </article>
 
 <style>
-	#background {
-		background-image: url("https://habitue-img.s3.sa-east-1.amazonaws.com/imagenes/1648827746.blob");
-		background-size: cover;
+	article {
+		background-image: url("../img/blur.png");
+		background-size: contain;
+		background-repeat: repeat;
 		background-position: center;
-		background-repeat: no-repeat;
-		height: 100%;
-		z-index: 10;
 	}
-
 	img {
 		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 	}

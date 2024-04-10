@@ -7,7 +7,7 @@ interface Slider {
 const { text, text2, style } = Astro.props;
 ---
 
-<article class="text-5xl md:text-8xl py-5 md:py-8 overflow-hidden">
+<article class="text-5xl md:text-8xl overflow-hidden">
 	<div class="slider-container">
 		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
@@ -78,7 +78,7 @@ const { text, text2, style } = Astro.props;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		animation: slide 50s linear infinite;
+		animation: slide 75s linear infinite;
 	}
 
 	@keyframes slide {
