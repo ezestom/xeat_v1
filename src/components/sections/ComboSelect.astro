@@ -8,25 +8,24 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<section class="min-h-screen">
-	<Slider text="productos" text2="especiales" />
+<section class="h-full flex items-end justify-end">
 	<App
 		client:visible
 		href1="#"
-		img1={data.productos_especiales[0].imagen}
-		title1={data.productos_especiales[0].titulo}
-		description1={data.productos_especiales[0].subtitulo}
+		img1={data.slider_categorias[0].imagen}
+		title1={data.slider_categorias[0].nombre}
+		description1={data.slider_categorias[0].descripcion}
 		href2="#"
-		img2={data.productos_especiales[1].imagen}
-		title2={data.productos_especiales[1].titulo}
-		description2={data.productos_especiales[1].subtitulo}
+		img2={data.slider_categorias[1].imagen}
+		title2={data.slider_categorias[1].nombre}
+		description2={data.slider_categorias[1].descripcion}
 		href3="#"
-		img3={data.productos_especiales[0].imagen}
-		title3={data.productos_especiales[0].titulo}
-		description3={data.productos_especiales[0].subtitulo}
+		img3={data.slider_categorias[2].imagen}
+		title3={data.slider_categorias[2].nombre}
+		description3={data.slider_categorias[2].descripcion}
 		href4="#"
-		img4={data.productos_especiales[1].imagen}
-		title4={data.productos_especiales[1].titulo}
-		description4={data.productos_especiales[1].subtitulo}
+		img4={data.slider_categorias[0].imagen}
+		title4={data.slider_categorias[0].nombre}
+		description4={data.slider_categorias[0].descripcion}
 	/>
 </section>
