@@ -51,48 +51,60 @@ export function App({
 					},
 				}}
 				modules={[FreeMode, Pagination]}
-				className="mySwiper h-[75vh]">
+				className="mySwiper h-[85vh]">
 				<SwiperSlide>
-					<a href={href1} className="transition hover:scale-105 hover:brightness-125" id="link-burger">
+					<a
+						href={href1}
+						className="transition hover:brightness-125"
+						id="link-burger">
 						<img src={img1} alt={`image of ${img1}`} />
 						<div className="text">
 							<h1 className="text-xl md:text-2xl font-bold">
 								{title1}
 							</h1>
-							<p className="text-xl pt-2">{description1}</p>
+							<p className="text-base lowercase pt-2">{description1}</p>
 						</div>
 					</a>
 				</SwiperSlide>
 				<SwiperSlide>
-					<a href={href2} className="transition hover:scale-105 hover:brightness-125" id="link-burger">
+					<a
+						href={href2}
+						className="transition hover:brightness-125"
+						id="link-burger">
 						<img src={img2} alt={`image of ${img2}`} />
 						<div className="text">
 							<h1 className="text-xl md:text-2xl font-bold">
 								{title2}
 							</h1>
-							<p className="text-xl pt-2">{description2}</p>
+							<p className="text-base lowercase pt-2">{description2}</p>
 						</div>
 					</a>
 				</SwiperSlide>
 				<SwiperSlide>
-					<a href={href3} className="transition hover:scale-105 hover:brightness-125" id="link-burger">
+					<a
+						href={href3}
+						className="transition hover:brightness-125"
+						id="link-burger">
 						<img src={img3} alt={`image of ${img3}`} />
 						<div className="text">
 							<h1 className="text-xl md:text-2xl font-bold">
 								{title3}
 							</h1>
-							<p className="text-xl pt-2 ">{description3}</p>
+							<p className="text-base lowercase pt-2 ">{description3}</p>
 						</div>
 					</a>
 				</SwiperSlide>
 				<SwiperSlide>
-					<a href={href4} className="transition hover:scale-105 hover:brightness-125" id="link-burger">
+					<a
+						href={href4}
+						className="transition hover:brightness-125"
+						id="link-burger">
 						<img src={img4} alt={`image of ${img4}`} />
 						<div className="text">
 							<h1 className="text-xl md:text-2xl font-bold">
 								{title4}
 							</h1>
-							<p className="text-xl pt-2 ">{description4}</p>
+							<p className="text-base lowercase pt-2 ">{description4}</p>
 						</div>
 					</a>
 				</SwiperSlide>
