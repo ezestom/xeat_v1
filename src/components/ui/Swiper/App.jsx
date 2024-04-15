@@ -1,5 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,6 +30,16 @@ export function App({
 	title4,
 	description4,
 }) {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleClick = () => {
+		setIsOpen(true);
+		
+	};
+	const handleClose = () => {
+		setIsOpen(false);
+	};
+
 	return (
 		<>
 			<Swiper
@@ -51,63 +62,66 @@ export function App({
 					},
 				}}
 				modules={[FreeMode, Pagination]}
-				className="mySwiper h-[85vh]">
-				<SwiperSlide>
-					<a
-						href={href1}
-						className="transition hover:brightness-125"
-						id="link-burger">
-						<img src={img1} alt={`image of ${img1}`} />
-						<div className="text">
-							<h1 className="text-xl md:text-2xl font-bold">
-								{title1}
-							</h1>
-							<p className="text-base lowercase pt-2">{description1}</p>
-						</div>
-					</a>
-				</SwiperSlide>
-				<SwiperSlide>
-					<a
-						href={href2}
-						className="transition hover:brightness-125"
-						id="link-burger">
-						<img src={img2} alt={`image of ${img2}`} />
-						<div className="text">
-							<h1 className="text-xl md:text-2xl font-bold">
-								{title2}
-							</h1>
-							<p className="text-base lowercase pt-2">{description2}</p>
-						</div>
-					</a>
-				</SwiperSlide>
-				<SwiperSlide>
-					<a
-						href={href3}
-						className="transition hover:brightness-125"
-						id="link-burger">
-						<img src={img3} alt={`image of ${img3}`} />
-						<div className="text">
-							<h1 className="text-xl md:text-2xl font-bold">
-								{title3}
-							</h1>
-							<p className="text-base lowercase pt-2 ">{description3}</p>
-						</div>
-					</a>
-				</SwiperSlide>
-				<SwiperSlide>
-					<a
-						href={href4}
-						className="transition hover:brightness-125"
-						id="link-burger">
-						<img src={img4} alt={`image of ${img4}`} />
-						<div className="text">
-							<h1 className="text-xl md:text-2xl font-bold">
-								{title4}
-							</h1>
-							<p className="text-base lowercase pt-2 ">{description4}</p>
-						</div>
-					</a>
-				</SwiperSlide>
+				className="mySwiper bg-black/10  md:h-[80vh]">
+				{
+					// array of objects
+					[
+						{
+							href: href1,
+							img: img1,
+							title: title1,
+							description: description1,
+						},
+						{
+							href: href2,
+							img: img2,
+							title: title2,
+							description: description2,
+						},
+						{
+							href: href3,
+							img: img3,
+							title: title3,
+							description: description3,
+						},
+						{
+							href: href4,
+							img: img4,
+							title: title4,
+							description: description4,
+						},
+					].map((item, index) => {
+						return (
+							<SwiperSlide key={index}>
+								<button
+									onClick={handleClick}
+									className="transition my-5 hover:brightness-125"
+									id="link-burger">
+									<img
+										src={item?.img}
+										alt={`image of ${item?.img}`}
+									/>
+									<div className="text">
+										<h1 className="text-xl md:text-2xl font-bold">
+											{item?.title}
+										</h1>
+										<p className="text-base lowercase pt-2">
+											{item?.description}
+										</p>
+									</div>
+									{isOpen ?? (
+										<dialog open={isOpen}>
+											<button onClick={handleClose}>
+												Close
+											</button>
+											<p>{item?.description}</p>
+										</dialog>
+									)}
+								</button>
+							</SwiperSlide>
+						);
+					})
+				}
 			</Swiper>
 		</>
 	);

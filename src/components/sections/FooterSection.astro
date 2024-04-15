@@ -5,7 +5,7 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<section class="flex items-center ">
+<section class="flex items-center">
 	<p
 		class="text-4xl my-2 md:text-7xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
 		{data.nombre}
@@ -18,10 +18,10 @@ const data = await response.json();
 			<ul class="">
 				<h3 class="uppercase text-3xl">tbv</h3>
 				<li class="md:py-3 hover:underline">
-					<a href="/burgers">Burgers</a>
+					<a href="/smashburgers">Burgers</a>
 				</li>
 				<li class="md:py-3 hover:underline">
-					<a href="/fies">Fries</a>
+					<a href="/fries">Fries</a>
 				</li>
 				<li class="md:py-3 hover:underline">
 					<a href={data.tienda_url}>Hacer pedido</a>

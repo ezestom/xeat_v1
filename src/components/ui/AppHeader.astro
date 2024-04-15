@@ -9,49 +9,48 @@ const data = await response.json();
 ---
 
 <header>
+	<h1 class="flex items-center">
+		<a href="/">
+			<img
+				src={data.logo_url}
+				alt="logo"
+				class="max-w-[225px] hover:scale-105 transition"
+			/>
+		</a>
+	</h1>
+	<nav>
+		<li>
+			<a class="a" href="/smashburgers">
+				<span class="hover-animation">smashburgers</span></a
+			>
+		</li>
 
-		<h1 class="flex items-center">
-			<a href="/">
-				<img
-					src={data.logo_url}
-					alt="logo"
-					class="max-w-[225px] hover:scale-105 transition"
-				/>
+		<li>
+			<a class="a" href="/fries">
+				<span class="hover-animation">tbv fries</span></a
+			>
+		</li>
+
+		<li>
+			<a class="a" href="/know-us">
+				<span class="hover-animation">conócenos</span>
 			</a>
-		</h1>
-		<nav>
-			<li>
-				<a class="a" href="/smashburgers">
-					<span class="hover-animation">smashburgers</span></a
-				>
-			</li>
-
-			<li>
-				<a class="a pointer-events-none opacity-50" href="/fries">
-					<span class="hover-animation">tbv fries</span></a
-				>
-			</li>
-
-			<li>
-				<a class="a" href="/know-us">
-					<span class="hover-animation">conócenos</span>
-				</a>
-			</li>
-			<li>
-				<a
-					target="_blank"
-					href={data.tienda_url}
-					class="uppercase text-nowrap bg-[red] text-[--white] hover:bg-red-600 transition py-2 px-4 inline-block">
-					hacer pedido
-				</a>
-			</li>
-			<li>
-				<a class="a" href="/faqs">
-					<span class="hover-animation">faqs</span>
-				</a>
-			</li>
-		</nav>
-		<!-- <span class="my-auto flex gap-2">
+		</li>
+		<li>
+			<a
+				target="_blank"
+				href={data.tienda_url}
+				class="uppercase text-nowrap bg-[red] text-[--white] hover:bg-red-600 transition py-2 px-4 inline-block">
+				hacer pedido
+			</a>
+		</li>
+		<li>
+			<a class="a" href="/faqs">
+				<span class="hover-animation">faqs</span>
+			</a>
+		</li>
+	</nav>
+	<!-- <span class="my-auto flex gap-2">
 			<a
 				href={`https://www.instagram.com/${data.redes_sociales[0].instagram.slice(1)}`}
 				target="_blank">
@@ -69,7 +68,6 @@ const data = await response.json();
 				/></a
 			>
 		</span> -->
-
 </header>
 
 <style>
@@ -79,9 +77,7 @@ const data = await response.json();
 		z-index: 20;
 		display: flex;
 		justify-content: space-between;
-
 	}
-
 
 	/* section h1 {
 		margin-right: 1rem;
@@ -142,7 +138,7 @@ const data = await response.json();
 
 	/* hover animaation */
 	@media (max-width: 1150px) {
-		header  {
+		header {
 			display: none;
 		}
 	}
