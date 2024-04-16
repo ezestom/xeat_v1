@@ -5,19 +5,19 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<section class="flex items-center">
-	<div class="flex flex-col text-center">
+<section class="flex items-center justify-around">
+	<div class="flex flex-col text-center md:w-1/2">
 		<p
-			class="pl-2 text-3xl my-2 md:text-7xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
+			class="text-4xl my-2 md:text-7xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
 			{data.nombre}
 		</p>
-		<p class="text-xl font-semibold">
+		<p class="text-2xl font-semibold">
 			{data.direccion}
 		</p>
 	</div>
 
 	<article
-		class="flex items-start md:items-center justify-evenly flex-col w-full p-5">
+		class="flex items-start md:items-center justify-evenly flex-col w-full md:w-1/2 p-5">
 		<div
 			class="flex flex-col md:flex-row items-start gap-5 md:gap-10 flex-wrap">
 			<ul class="">
@@ -41,7 +41,7 @@ const data = await response.json();
 				<li class="md:py-3 hover:underline">
 					<a
 						target="_blank"
-						href={`https://wa.me/${data.whatsapp.numero}`}
+						href={`https://wa.me/${data.whatsapp[0].numero}`}
 						>Whatsapp</a
 					>
 				</li>

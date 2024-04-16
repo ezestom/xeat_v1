@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import triple from "../../img/triple.png";
 import Slider from "../ui/Slider.astro";
 import img from "../../img/hero-1.png";
+import whatsapp from "../../icons/whatsappColor.svg";
 import img2 from "../../img/hero-2.png";
 import img3 from "../../img/hero-3.png";
 import img4 from "../../img/hero-4.png";
@@ -58,6 +59,12 @@ const data = await response.json();
 	<div class="w-screen overflow-hidden max-w-screen">
 		<Slider text="the burger vilas" text2="smashbuergers since 2020" />
 	</div>
+	<a
+		target="_blank"
+		class="fixed bottom-5 right-5 max-w-14 hover:scale-110 transition-transform duration-300 ease-in-out z-50"
+		href={`https://wa.me/${data.whatsapp[0].numero}`}
+		><img src={whatsapp.src} alt="whatsapp image" class="z-80" /></a
+	>
 </section>
 
 <style>
