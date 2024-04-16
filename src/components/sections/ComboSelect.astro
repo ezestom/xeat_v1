@@ -1,31 +1,71 @@
 ---
 import { App } from "../ui/Swiper/App.jsx";
-import Slider from "../ui/Slider.astro";
 
 const response = await fetch(
 	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
 );
 const data = await response.json();
+
+const info = [
+	{
+		img: data.slider_categorias[0].imagen,
+		title: data.slider_categorias[0].nombre,
+		price: data.slider_categorias[0].descripcion,
+	},
+	{
+		img: data.slider_categorias[1].imagen,
+		title: data.slider_categorias[1].nombre,
+		price: data.slider_categorias[1].descripcion,
+	},
+	{
+		img: data.slider_categorias[2].imagen,
+		title: data.slider_categorias[2].nombre,
+		price: data.slider_categorias[2].descripcion,
+	},
+];
 ---
 
-<section class="h-full flex items-end justify-end">
-	<App
+<section
+	class="h-full flex items-end justify-end w-full max-w-screen bg-black/10 py-10">
+	<!-- <App
 		client:visible
 		href1="#"
 		img1={data.slider_categorias[0].imagen}
 		title1={data.slider_categorias[0].nombre}
-		description1={data.slider_categorias[0].descripcion}
+		price1={data.slider_categorias[0].descripcion}
 		href2="#"
 		img2={data.slider_categorias[1].imagen}
 		title2={data.slider_categorias[1].nombre}
-		description2={data.slider_categorias[1].descripcion}
+		price2={data.slider_categorias[1].descripcion}
 		href3="#"
 		img3={data.slider_categorias[2].imagen}
 		title3={data.slider_categorias[2].nombre}
-		description3={data.slider_categorias[2].descripcion}
+		price3={data.slider_categorias[2].descripcion}
 		href4="#"
 		img4={data.slider_categorias[0].imagen}
 		title4={data.slider_categorias[0].nombre}
-		description4={data.slider_categorias[0].descripcion}
-	/>
+		price4={data.slider_categorias[0].descripcion}
+	/> -->
+	{
+		info.map((item, index) => (
+			<aside class="brightness-125 h-full  " id="link-burger">
+				<img
+					transition:name={item?.img}
+					src={item?.img}
+					alt={`image of ${item?.img}`}
+				/>
+				<div class="flex text-center text-base  text-black max-w-[75%] p-4 flex-col items-center justify-center my-5">
+					<h1 class="text-base md:text-3xl font-bold">
+						{item?.title}
+					</h1>
+					<p class="text-sm md:text-base pt-3">{item?.price}</p>
+					<a
+						class="border-2 border-black hover:text-white hover:bg-black transition text-sm text-black px-4 py-2 mt-3"
+						href="#">
+						Ver más
+					</a>
+				</div>
+			</aside>
+		))
+	}
 </section>

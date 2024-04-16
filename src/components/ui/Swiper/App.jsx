@@ -1,6 +1,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
+import close from "../../../icons/close.svg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,28 +17,27 @@ export function App({
 	href1,
 	img1,
 	title1,
-	description1,
+	price1,
 	href2,
 	img2,
 	title2,
-	description2,
+	price2,
 	href3,
 	img3,
 	title3,
-	description3,
+	price3,
 	href4,
 	img4,
 	title4,
-	description4,
+	price4,
 }) {
-	const [isOpen, setIsOpen] = useState(false);
+	const [openSliderIndex, setOpenSliderIndex] = useState(null);
 
-	const handleClick = () => {
-		setIsOpen(true);
-		
+	const handleClick = (index) => {
+		setOpenSliderIndex(index);
 	};
 	const handleClose = () => {
-		setIsOpen(false);
+		setOpenSliderIndex(null);
 	};
 
 	return (
@@ -70,34 +70,36 @@ export function App({
 							href: href1,
 							img: img1,
 							title: title1,
-							description: description1,
+							price: price1,
 						},
 						{
 							href: href2,
 							img: img2,
 							title: title2,
-							description: description2,
+							price: price2,
 						},
 						{
 							href: href3,
 							img: img3,
 							title: title3,
-							description: description3,
+							price: price3,
 						},
 						{
 							href: href4,
 							img: img4,
 							title: title4,
-							description: description4,
+							price: price4,
 						},
 					].map((item, index) => {
 						return (
 							<SwiperSlide key={index}>
 								<button
-									onClick={handleClick}
+									onClick={() => handleClick(index)}
 									className="transition my-5 hover:brightness-125"
 									id="link-burger">
 									<img
+										id="img"
+										transition:name={item?.img}
 										src={item?.img}
 										alt={`image of ${item?.img}`}
 									/>
@@ -105,19 +107,47 @@ export function App({
 										<h1 className="text-xl md:text-2xl font-bold">
 											{item?.title}
 										</h1>
-										<p className="text-base lowercase pt-2">
-											{item?.description}
-										</p>
 									</div>
-									{isOpen ?? (
-										<dialog open={isOpen}>
-											<button onClick={handleClose}>
-												Close
-											</button>
-											<p>{item?.description}</p>
-										</dialog>
-									)}
 								</button>
+								{openSliderIndex === index && (
+									<dialog className=" z-50 backdrop-blur flex bg-black-10 w-full h-full transition-all">
+										<div className="bg-black/30 p-5 ">
+											<button
+												onClick={handleClose}
+												className="bg-black/20 p-2 mt-5">
+												<img
+													src={close.src}
+													alt="close"
+													className="w-5 h-5"
+												/>
+											</button>
+											<img
+												transition:name={item?.img}
+												className="w-full  object-cover brightness-150"
+												src={item?.img}
+												alt={`image of ${item?.img}`}
+											/>
+											<h1 className="text-2xl font-bold">
+												{item?.title}
+											</h1>
+											<p className="text-base  ">
+												{/* {item?.description} */}
+												Lorem, ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Excepturi placeat iste fugiat id
+												minus sit esse natus.
+											</p>
+											<p className="text-xl font-semibold py-2">
+												{item?.price}
+											</p>
+											<a
+												href="http://tbvmalvin.rhinox.io"
+												className="bg-black text-white py-2 px-4">
+												Ir a la tienda
+											</a>
+										</div>
+									</dialog>
+								)}
 							</SwiperSlide>
 						);
 					})

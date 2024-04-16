@@ -3,8 +3,7 @@ import AppHeader from "../components/ui/AppHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import Slider from "../components/ui/Slider.astro";
 import { App } from "../components/ui/Swiper/App.jsx";
-import img1 from "../img/burger.png";
-import img2 from "../img/burger2.png";
+
 import FooterSection from "../components/sections/FooterSection.astro";
 import Instagram from "../components/sections/Instagram.astro";
 
@@ -22,43 +21,52 @@ const data = await response.json();
 		</div>
 		<App
 			href1="#"
-			img1={data.slider_productos[1].imagen}
-			title1="burger"
-			description1="$15.50"
+			img1={data.slider_productos[0].imagen}
+			title1={data.slider_productos[0].nombre}
+			price1={data.slider_productos[0].precio}
 			href2="#"
 			img2={data.slider_productos[1].imagen}
-			title2="burger"
-			description2="$12.30"
-			href3="#"
-			img3={data.slider_productos[1].imagen}
-			title3="burger"
-			description3="$10.00"
-			href4="#"
-			img4={data.slider_productos[1].imagen}
-			title4="burger"
-			description4="$15.50 "
-			client:visible
-		/>
-		<App
-			href1="#"
-			img1={data.slider_productos[2].imagen}
-			title1="burger"
-			description1="$15.50"
-			href2="#"
-			img2={data.slider_productos[2].imagen}
-			title2="burger"
-			description2="$12.30"
+			title2={data.slider_productos[1].nombre}
+			price2={data.slider_productos[1].precio}
 			href3="#"
 			img3={data.slider_productos[2].imagen}
-			title3="burger"
-			description3="$10.00"
+			title3={data.slider_productos[2].nombre}
+			price3={data.slider_productos[2].precio}
 			href4="#"
-			img4={data.slider_productos[2].imagen}
-			title4="burger"
-			description4="$15.50"
+			img4={data.slider_productos[3].imagen}
+			title4={data.slider_productos[3].nombre}
+			price4={data.slider_productos[3].precio}
+			client:visible
+		/>
+		<hr />
+		<App
+			href1="#"
+			img1={data.slider_productos[0].imagen}
+			title1={data.slider_productos[0].nombre}
+			price1={data.slider_productos[0].precio}
+			href2="#"
+			img2={data.slider_productos[1].imagen}
+			title2={data.slider_productos[1].nombre}
+			price2={data.slider_productos[1].precio}
+			href3="#"
+			img3={data.slider_productos[2].imagen}
+			title3={data.slider_productos[2].nombre}
+			price3={data.slider_productos[2].precio}
+			href4="#"
+			img4={data.slider_productos[3].imagen}
+			title4={data.slider_productos[3].nombre}
+			price4={data.slider_productos[3].precio}
 			client:visible
 		/>
 		<Instagram />
 		<FooterSection />
 	</section>
 </Layout>
+
+<style>
+	hr {
+		border: 1px solid #000;
+		width: 100%;
+		margin: 0 auto;
+	}
+</style>
