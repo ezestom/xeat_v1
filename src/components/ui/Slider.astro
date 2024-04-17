@@ -4,10 +4,10 @@ interface Slider {
 	text2: string;
 	style: string;
 }
-const { text, text2, style } = Astro.props;
+const { text, text2 } = Astro.props;
 ---
 
-<article class="text-5xl md:text-8xl overflow-hidden">
+<article class="text-5xl md:text-[5vw] overflow-hidden">
 	<div class="slider-container">
 		<p class="mx-4 font-black uppercase flex text-nowrap">
 			<span class="empty-text">{text}<span class=""> ● </span></span>
