@@ -35,7 +35,7 @@ const data = await response.json();
 		<div class="flex flex-col justify-center h-full gap-8 items-center">
 			<h2
 				id="titulo"
-				class="text-5xl md:text-[5.5vw] text-nowrap px-4 py-2 uppercase font-black text-black bg-[red]">
+				class="text-5xl md:text-[8vw] tracking-wide text-nowrap px-4 py-2 uppercase font-black text-black bg-[red]">
 				{data.slider_inicio[0].titulo}
 			</h2>
 			<p class="text-center px-4">
@@ -74,11 +74,11 @@ const data = await response.json();
 
 <style>
 	#titulo {
-		src: url("../components/fonts/LeagueGothic-Regular.ttf");
+		font-family: "LeagueGothic";
 	}
 	.burger,
-	h2 {
-		filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+	img {
+		filter: drop-shadow(0 0.25em 0.25em black);
 	}
 	/* Define variables */
 	:root {

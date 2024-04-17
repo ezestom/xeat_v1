@@ -1,5 +1,5 @@
-img {
-	filter: drop-shadow(0 0 0.5rem black);
+#img {
+	filter: drop-shadow(0 .25em .25em black);
 }
 #link-burger {
 	height: 100%;

@@ -111,7 +111,7 @@ export function App({
 								</button>
 								{openSliderIndex === index && (
 									<dialog className=" z-50 backdrop-blur flex bg-black-10 w-full h-full transition-all">
-										<div className="bg-black/30 p-5 ">
+										<div className="bg-black/30 p-5 flex flex-col justify-around items-center ">
 											<button
 												onClick={handleClose}
 												className="bg-black/20 p-2 mt-5">
@@ -123,7 +123,7 @@ export function App({
 											</button>
 											<img
 												transition:name={item?.img}
-												className="w-full  object-cover brightness-150"
+												className="w-full  object-cover brightness-150 "
 												src={item?.img}
 												alt={`image of ${item?.img}`}
 											/>
@@ -142,7 +142,7 @@ export function App({
 											</p>
 											<a
 												href="http://tbvmalvin.rhinox.io"
-												className="bg-black text-white py-2 px-4">
+												className="hover:bg-black hover:text-white border border-black py-2 px-4">
 												Ir a la tienda
 											</a>
 										</div>

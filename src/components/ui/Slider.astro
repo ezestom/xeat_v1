@@ -7,79 +7,81 @@ interface Slider {
 const { text, text2 } = Astro.props;
 ---
 
-<article class="text-5xl md:text-[5vw] overflow-hidden">
+<article class="text-5xl md:text-[6vw] overflow-hidden">
 	<div class="slider-container">
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
-		<p class="mx-4 font-black uppercase flex text-nowrap">
-			<span class="empty-text">{text}<span class=""> ● </span></span>
+		<span class=""> / </span>
+		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
+			<span class="empty-text">{text}<span class=""> / </span></span>
 			{text2}
 		</p>
-		<span class=""> ● </span>
+		<span class=""> / </span>
 	</div>
 </article>
 
 <style>
+	article {
+		font-family: "LeagueGothic";
+	}
 	div {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
 		animation: slide 750s linear infinite;
-
 	}
 
 	@keyframes slide {
