@@ -2,6 +2,7 @@
 import openBurger from "../../icons/openBurger.svg";
 import closeBurger from "../../icons/close.svg";
 import instagram from "../../icons/instagram.svg";
+import logo from "../../img/tvb.png";
 
 const response = await fetch(
 	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
@@ -9,7 +10,7 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<dialog>
+<dialog class="bg-[#ccc]">
 	<section>
 		<nav>
 			<li>
@@ -34,7 +35,7 @@ const data = await response.json();
 				>
 			</li>
 			<li>
-				<a class="a pointer-events-none opacity-50" href="/fries">
+				<a class="a" href="/fries">
 					<span class="hover-animation">tbv fries</span></a
 				>
 			</li>
@@ -48,7 +49,7 @@ const data = await response.json();
 				<a
 					target="_blank"
 					href="https://www.mercadolibre.com"
-					class="uppercase text-nowrap bg-[red] rounded-full text-[--white3] hover:bg-red-600 transition py-2 px-4 inline-block">
+					class="uppercase text-nowrap text-white bg-[red] hover:bg-red-600 transition py-2 px-4 inline-block">
 					hacer pedido
 				</a>
 			</li>
@@ -70,16 +71,18 @@ const data = await response.json();
 	</section>
 </dialog>
 
-<section class="fixed bg-[--white3] h-[104px] w-full flex z-50">
+<section class="fixed h-[75px] w-full flex justify-between px-2 z-50" id="section-burger">
 	<button
 		class="burger-btn"
 		onclick="document.querySelector('dialog').showModal()">
 		<img src={openBurger.src} alt="open image" class="openBtn" />
 	</button>
+	<img src={logo.src} class="max-w-[100px] object-contain" alt="logo image" />
 </section>
 <style>
-	section {
-		background-color: transparent;
+	#section-burger {
+		background-color: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(10px) saturate(180%);
 	}
 	section li {
 		list-style: none;
@@ -133,7 +136,8 @@ const data = await response.json();
 		z-index: 30;
 		width: 100%;
 		height: 100vh;
-		outline: 2rem solid #fafafa;
+		outline: 2rem solid #ccc;
+		box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7);
 	}
 	.burger-btn {
 		background-color: transparent;
