@@ -111,7 +111,7 @@ export function App({
 								</button>
 								{openSliderIndex === index && (
 									<dialog className=" z-50 backdrop-blur flex bg-black-10 w-full h-full transition-all">
-										<div className="bg-black/30 p-5 flex flex-col justify-around items-center ">
+										<div className="bg-black/30 h-[600px] md:h-full p-5 flex flex-col justify-around items-center ">
 											<button
 												onClick={handleClose}
 												className="bg-black/20 p-2 mt-5">

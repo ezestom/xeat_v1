@@ -1,5 +1,6 @@
+
 #img {
-	filter: drop-shadow(0 .25em .25em black);
+	filter: drop-shadow(0 0.25em 0.25em black);
 }
 #link-burger {
 	height: 100%;
@@ -74,4 +75,10 @@
 }
 .swiper-pagination {
 	display: none;
+}
+
+@media ( width < 768px) {
+	.swiper {
+	height: 600px;
+}
 }
