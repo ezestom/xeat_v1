@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import banner from "../img/banner.jpg";
+import banner_mobile from "../img/banner_mobile.jpg";
 
 import AppHeader from "../components/ui/AppHeader.astro";
 import Layout from "../layouts/Layout.astro";
@@ -19,7 +20,8 @@ const data = await response.json();
 <Layout title="Nuestras Smash Burgers 🍔">
 	<section>
 		<AppHeader />
-		<Image src={banner} alt="Banner" class="banner" />
+		<Image src={banner} alt="Banner" class="banner hidden md:block" />
+		<Image src={banner_mobile} alt="Banner" class="banner md:hidden" />
 		<div class="">
 			<Slider text="tbv" text2="smashburgers" />
 		</div>

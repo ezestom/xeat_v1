@@ -1,5 +1,8 @@
 ---
 import { Image } from "astro:assets";
+import banner from "../../img/banner.jpg";
+import banner_mobile from "../../img/banner_mobile.jpg";
+
 import triple from "../../img/triple.png";
 import Slider from "../ui/Slider.astro";
 import img from "../../img/hero-1.png";
@@ -16,21 +19,25 @@ const data = await response.json();
 ---
 
 <section
-	class="grid grid-cols-1 justify-center xl:grid-cols-2 overflow-hidden pt-20 md:pt-0 h-[95%]">
-	<article class="my-auto">
+	class="flex flex-col overflow-hidden h-auto md:h-screen relative">
+	<div class="w-full">
+		<Image src={banner} alt="Banner" class="banner hidden md:block" />
+		<Image src={banner_mobile} alt="Banner" class="banner md:hidden" />
+	</div>
+	<!-- <article class="my-auto">
 		<img
 			class="burger"
 			src={data.slider_inicio[0].imagen}
 			alt=`image of ${img}`
-		/>
-		<!-- <div class="container">
+		/> -->
+	<!-- <div class="container">
 			<Image class="photo" src={img} alt=`image of ${img}` />
 			<Image class="photo" src={img2} alt=`image of ${img2}` />
 			<Image class="photo" src={img3} alt=`image of ${img3}` />
 			<Image class="photo" src={img4} alt=`image of ${img4}` />
 			<Image class="photo" src={img5} alt=`image of ${img5}` />
 		</div> -->
-	</article>
+	<!-- </article>
 	<article class="flex flex-col m-auto">
 		<div class="flex flex-col justify-center h-full gap-8 items-center">
 			<h2
@@ -56,30 +63,30 @@ const data = await response.json();
 				{data.slider_inicio[0].titulo_boton}
 			</a>
 		</div>
-	</article>
-	<div class="w-screen overflow-hidden max-w-screen">
+	</article> -->
+
+	<div class="w-screen overflow-hidden max-w-screen md:absolute bottom-24">
 		<Slider text="the burger vilas" text2="smashbuergers since 2020" />
 	</div>
 	<a
 		target="_blank"
 		class="fixed bottom-2 right-2 max-w-14 z-50 hover:scale-105 transition-transform duration-300 ease-in-out"
 		href={`https://wa.me/${data.whatsapp[0].numero}`}
-		><img
-			src={whatsapp.src}
-			alt="whatsapp image"
-			class="z-80"
-		/></a
+		><img src={whatsapp.src} alt="whatsapp image" class="z-80" /></a
 	>
 </section>
 
 <style>
+	@media (max-width: 1150px) {
+		.banner {
+			padding-top: 75px;
+		}
+	}
 	#titulo {
 		font-family: "LeagueGothic";
 	}
 	.burger,
-	img {
-		filter: drop-shadow(0 0.25em 0.25em black);
-	}
+
 	/* Define variables */
 	:root {
 		--slides: 5;
