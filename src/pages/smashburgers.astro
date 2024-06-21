@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import banner from "../img/banner.jpg";
+
 import AppHeader from "../components/ui/AppHeader.astro";
 import Layout from "../layouts/Layout.astro";
 import Slider from "../components/ui/Slider.astro";
@@ -16,7 +19,8 @@ const data = await response.json();
 <Layout title="Nuestras Smash Burgers 🍔">
 	<section>
 		<AppHeader />
-		<div class="pt-24">
+		<Image src={banner} alt="Banner" class="banner" />
+		<div class="">
 			<Slider text="tbv" text2="smashburgers" />
 		</div>
 		<App
@@ -68,5 +72,10 @@ const data = await response.json();
 		border: 1px solid #000;
 		width: 100%;
 		margin: 0 auto;
+	}
+	@media (max-width: 1150px) {
+		.banner {
+			padding-top: 75px;
+		}
 	}
 </style>
