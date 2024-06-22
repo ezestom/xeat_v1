@@ -3,6 +3,7 @@ import openBurger from "../../icons/openBurger.svg";
 import closeBurger from "../../icons/close.svg";
 import instagram from "../../icons/instagram.svg";
 import logo from "../../img/tvb.png";
+import favorita from "../../img/favorita.png";
 
 const response = await fetch(
 	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
@@ -10,12 +11,12 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<dialog class="bg-[#ccc]">
+<dialog class="bg-[#ededed]">
 	<section>
-		<nav>
-			<li>
+		<nav class="relative">
+			<li class="">
 				<form method="dialog">
-					<button class="burger-btn">
+					<button class="close-btn absolute -right-0 -top-4">
 						<img
 							src={closeBurger.src}
 							alt="close button"
@@ -30,18 +31,18 @@ const data = await response.json();
 				</a>
 			</li>
 			<li>
-				<a class="a" href="/smashburgers">
+				<a class="a" href="#smashburgers">
 					<span class="hover-animation">smashburgers</span></a
 				>
 			</li>
 			<li>
-				<a class="a" href="/fries">
+				<a class="a" href="#fries">
 					<span class="hover-animation">tbv fries</span></a
 				>
 			</li>
 
 			<li>
-				<a class="a" href="/know-us">
+				<a class="a" href="#know-us">
 					<span class="hover-animation">conócenos</span>
 				</a>
 			</li>
@@ -53,14 +54,16 @@ const data = await response.json();
 					hacer pedido
 				</a>
 			</li>
-			<li>
-				<a class="a" href="/faqs">
-					<span class="hover-animation">faqs</span>
-				</a>
-			</li>
+			<!-- <li>
+			<a class="a" href="/faqs">
+				<span class="hover-animation">faqs</span>
+			</a>
+		</li> -->
 		</nav>
 		<span class="mx-auto inline-block w-full">
-			<a href="https://www.instagram.com/">
+			<a
+				href="https://www.instagram.com/the_burger_vilas/"
+				target="_blank">
 				<img
 					src={instagram.src}
 					alt="instagram logo"
@@ -70,18 +73,44 @@ const data = await response.json();
 		</span>
 	</section>
 </dialog>
-
-<section class="fixed h-[75px] w-full flex justify-between px-2 z-50" id="section-burger">
-	<button
-		class="burger-btn"
-		onclick="document.querySelector('dialog').showModal()">
+<section
+	class="fixed h-[75px] w-full flex flex-row-reverse justify-between px-2 z-50 shadow-sm"
+	id="section-burger">
+	<button class="burgerBtn">
 		<img src={openBurger.src} alt="open image" class="openBtn" />
 	</button>
-	<img src={logo.src} class="max-w-[100px] object-contain" alt="logo image" />
+	<div class="flex gap-1">
+		<img
+			src={logo.src}
+			class="max-w-[100px] object-contain"
+			alt="logo image"
+		/>
+		<img
+			src={favorita.src}
+			class="max-w-[115px] object-contain -translate-y-2"
+			alt=""
+		/>
+	</div>
 </section>
+
+<script>
+	const dialog = document.querySelector("dialog");
+	const a = document.querySelectorAll(".a");
+	const burgerBtn = document.querySelector(".burgerBtn");
+
+	burgerBtn?.addEventListener("click", () => {
+		dialog?.showModal();
+	});
+
+	a.forEach((el) => {
+		el.addEventListener("click", () => {
+			dialog?.close();
+		});
+	});
+</script>
+
 <style>
 	#section-burger {
-		background-color: rgba(0, 0, 0, 0.3);
 		backdrop-filter: blur(10px) saturate(180%);
 	}
 	section li {
@@ -136,16 +165,16 @@ const data = await response.json();
 		z-index: 30;
 		width: 100%;
 		height: 100vh;
-		outline: 2rem solid #ccc;
+		outline: 2rem solid #ededed;
 		box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7);
 	}
-	.burger-btn {
+	.burgerBtn {
 		background-color: transparent;
 		border: none;
 		cursor: pointer;
 		margin-block: auto;
 	}
-	.burger-btn img {
+	.burgerBtn img {
 		width: 50px;
 	}
 
@@ -158,7 +187,7 @@ const data = await response.json();
 
 	/* Etc */
 
-	@media (min-width: 1150px) {
+	@media (min-width: 1000px) {
 		section {
 			display: none;
 		}

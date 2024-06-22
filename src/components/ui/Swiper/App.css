@@ -1,17 +1,20 @@
 
 #img {
 	filter: drop-shadow(0 0.25em 0.25em black);
+	padding-inline: 3rem;
 }
 #link-burger {
 	height: 100%;
-	max-height: 600px;
+	/* max-height: 500px; */
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: center;
+	gap: 2rem;
 }
 #link-burger > img {
-	transition: transform 0.75s ease-in-out;
+	/* transition: transform 0.75s ease-in-out; */
+	transition: all 0.3s ease-in-out;
 }
 #link-burger:hover > #img {
 	scale: 1.05;
@@ -21,7 +24,7 @@
 	text-align: center;
 	font-size: 1rem;
 	background: var(--white3);
-	height: 100%;
+	/* height: 100%; */
 
 	/* Center slide text vertically */
 	display: flex;
@@ -79,6 +82,6 @@
 
 @media ( width < 768px) {
 	.swiper {
-	height: 600px;
+	height: 400px;
 }
 }

@@ -62,7 +62,7 @@ export function App({
 					},
 				}}
 				modules={[FreeMode, Pagination]}
-				className="mySwiper bg-black/10  md:h-[80vh]">
+				className="mySwiper bg-black/5  md:h-[80vh]">
 				{
 					// array of objects
 					[
@@ -95,7 +95,7 @@ export function App({
 							<SwiperSlide key={index}>
 								<button
 									onClick={() => handleClick(index)}
-									className="transition my-5 hover:brightness-125"
+									className="transition hover:brightness-125"
 									id="link-burger">
 									<img
 										id="img"
@@ -104,17 +104,17 @@ export function App({
 										alt={`image of ${item?.img}`}
 									/>
 									<div className="text">
-										<h1 className="text-xl md:text-2xl font-bold">
+										<h1 className="text-base font-bold">
 											{item?.title}
 										</h1>
 									</div>
 								</button>
 								{openSliderIndex === index && (
 									<dialog className=" z-50 backdrop-blur flex bg-black-10 w-full h-full transition-all">
-										<div className="bg-black/30 h-[600px] md:h-full p-5 flex flex-col justify-around items-center ">
+										<div className="bg-black/20 h-auto md:h-full p-20 md:p-8 flex flex-col justify-center items-center ">
 											<button
 												onClick={handleClose}
-												className="bg-black/20 p-2 mt-5">
+												className="bg-black/20  p-1">
 												<img
 													src={close.src}
 													alt="close"
@@ -127,24 +127,22 @@ export function App({
 												src={item?.img}
 												alt={`image of ${item?.img}`}
 											/>
-											<h1 className="text-2xl font-bold">
+											<h1 className="text-xl font-bold">
 												{item?.title}
 											</h1>
-											<p className="text-base  ">
+											<p className="text-sm  ">
 												{/* {item?.description} */}
 												Lorem, ipsum dolor sit amet
 												consectetur adipisicing elit.
-												Excepturi placeat iste fugiat id
-												minus sit esse natus.
 											</p>
-											<p className="text-xl font-semibold py-2">
+											<p className="text-xl font-semibold ">
 												{item?.price}
 											</p>
-											<a
-												href="http://tbvmalvin.rhinox.io"
-												className="hover:bg-black hover:text-white border border-black py-2 px-4">
-												Ir a la tienda
-											</a>
+										<a
+											href="http://tbvmalvin.rhinox.io"
+											className="hover:bg-black text-base hover:text-white border border-black py-2 px-4">
+											Ir a la tienda
+										</a>
 										</div>
 									</dialog>
 								)}

@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import banner from "../../img/banner.jpg";
 import banner_mobile from "../../img/banner_mobile.jpg";
+import upArrow from "../../icons/upArrow.svg";
 
 import triple from "../../img/triple.png";
 import Slider from "../ui/Slider.astro";
@@ -19,7 +20,7 @@ const data = await response.json();
 ---
 
 <section
-	class="flex flex-col overflow-hidden h-auto md:h-screen relative">
+	class="flex flex-col justify-between overflow-hidden h-screen relative">
 	<div class="w-full">
 		<Image src={banner} alt="Banner" class="banner hidden md:block" />
 		<Image src={banner_mobile} alt="Banner" class="banner md:hidden" />
@@ -74,9 +75,31 @@ const data = await response.json();
 		href={`https://wa.me/${data.whatsapp[0].numero}`}
 		><img src={whatsapp.src} alt="whatsapp image" class="z-80" /></a
 	>
+	<a
+		class="fixed bottom-2 left-2 max-w-14 z-50 hover:scale-105 transition-transform duration-300 ease-in-out opacity-0"
+		href="#top"
+		id="top"
+		><img
+			src={upArrow.src}
+			alt="top image"
+			class="z-80 bg-[#ededed] rounded-full shadow-md"
+		/></a
+	>
 </section>
 
 <style>
+	#top {
+		animation: fade linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0 50px;
+	}
+
+	@keyframes fade {
+		to {
+			opacity: 1;
+		}
+	}
+
 	@media (max-width: 1150px) {
 		.banner {
 			padding-top: 75px;

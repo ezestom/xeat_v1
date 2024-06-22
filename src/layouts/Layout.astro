@@ -22,7 +22,6 @@ import MobileNav from "../components/ui/MobileNav.astro";
 		<ViewTransitions />
 	</head>
 	<body>
-		<MobileNav />
 		<slot />
 		<style is:global>
 			:root {
@@ -45,6 +44,7 @@ import MobileNav from "../components/ui/MobileNav.astro";
 			}
 			html {
 				/* font-family: "Onest Variable", sans-serif; */
+				scroll-behavior: smooth;
 				font-family:
 					"AvenirNext",
 					sans-serif,
