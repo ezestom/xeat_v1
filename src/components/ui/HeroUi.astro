@@ -21,13 +21,13 @@ const data = await response.json();
 ---
 
 <section
-	class="flex flex-col justify-between overflow-hidden relative pt-[45px] md:pt-0 max-h-screen h-full">
+	class="flex flex-col justify-between overflow-hidden relative pt-[45px] md:pt-0 sm:max-h-screen h-full">
 	<div class="w-full h-auto">
-		<Image src={banner} alt="Banner" class="banner hidden md:block" />
+		<Image src={banner} alt="Banner" class="banner hidden xl:block" />
 		<Image
 			src={banner_mobile}
 			alt="Banner"
-			class="banner md:hidden max-w-full h-auto"
+			class="banner xl:hidden max-w-full h-auto mx-auto"
 		/>
 	</div>
 	<a
