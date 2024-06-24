@@ -21,20 +21,26 @@ const data = await response.json();
 ---
 
 <section
-	class="flex flex-col justify-between overflow-hidden h-full relative pt-[45px]">
+	class="flex flex-col justify-between overflow-hidden relative pt-[45px] md:pt-0 max-h-screen h-full">
 	<div class="w-full h-auto">
-		<Image src={banner} alt="Banner" class="banner hidden sm:block" />
+		<Image src={banner} alt="Banner" class="banner hidden md:block" />
 		<Image
 			src={banner_mobile}
 			alt="Banner"
-			class="banner sm:hidden max-w-full h-auto"
+			class="banner md:hidden max-w-full h-auto"
 		/>
 	</div>
 	<a
 		href={data.tienda_url}
-		class="block p-0 m-0 sm:hidden hover:scale-105 transition hover:shadow">
+		class="block p-0 m-0 md:hidden hover:scale-105 transition hover:shadow">
 		<img src={button.src} alt="button image" />
 	</a>
+	<div class="overflow-hidden max-w-screen md:absolute bottom-24 py-5 md:py-0">
+		<Slider
+			text="SMASHBURGERS SINCE 2020"
+			text2="SMASHBURGERS SINCE 2020"
+		/>
+	</div>
 	<!-- <article class="my-auto">
 		<img
 			class="burger"
@@ -76,13 +82,6 @@ const data = await response.json();
 		</div>
 	</article> -->
 
-	<div
-		class="overflow-hidden max-w-screen md:absolute bottom-0 py-5">
-		<Slider
-			text="SMASHBURGERS SINCE 2020"
-			text2="SMASHBURGERS SINCE 2020"
-		/>
-	</div>
 	<a
 		target="_blank"
 		class="fixed bottom-2 right-2 max-w-14 z-50 hover:scale-105 transition-transform duration-300 ease-in-out"
