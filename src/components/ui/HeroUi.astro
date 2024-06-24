@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import banner from "../../img/banner.jpg";
-import banner_mobile from "../../img/banner_mobile.jpg";
+import banner_mobile from "../../img/prueba.jpg";
 import upArrow from "../../icons/upArrow.svg";
 
 import triple from "../../img/triple.png";
@@ -23,7 +23,7 @@ const data = await response.json();
 	class="flex flex-col justify-between overflow-hidden h-screen relative">
 	<div class="w-full">
 		<Image src={banner} alt="Banner" class="banner hidden md:block" />
-		<Image src={banner_mobile} alt="Banner" class="banner md:hidden" />
+		<Image src={banner_mobile} alt="Banner" class="banner md:hidden w-full h-full object-cover" />
 	</div>
 	<!-- <article class="my-auto">
 		<img
@@ -66,7 +66,7 @@ const data = await response.json();
 		</div>
 	</article> -->
 
-	<div class="w-screen overflow-hidden max-w-screen md:absolute bottom-24">
+	<div class=" overflow-hidden max-w-screen md:absolute bottom-24">
 		<Slider text="the burger vilas" text2="smashbuergers since 2020" />
 	</div>
 	<a
