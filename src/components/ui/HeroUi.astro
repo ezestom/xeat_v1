@@ -21,7 +21,7 @@ const data = await response.json();
 ---
 
 <section
-	class="flex flex-col justify-between overflow-hidden h-screen relative pt-[45px]">
+	class="flex flex-col justify-between overflow-hidden h-full relative pt-[45px]">
 	<div class="w-full h-auto">
 		<Image src={banner} alt="Banner" class="banner hidden sm:block" />
 		<Image
@@ -76,8 +76,12 @@ const data = await response.json();
 		</div>
 	</article> -->
 
-	<div class="overflow-hidden max-w-screen md:absolute md:bottom-24 -pt-[45px] sm:pt-0">
-		<Slider text="the burger vilas" text2="smashbuergers since 2020" />
+	<div
+		class="overflow-hidden max-w-screen md:absolute bottom-0 py-5">
+		<Slider
+			text="SMASHBURGERS SINCE 2020"
+			text2="SMASHBURGERS SINCE 2020"
+		/>
 	</div>
 	<a
 		target="_blank"
