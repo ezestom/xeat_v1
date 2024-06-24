@@ -74,12 +74,16 @@ const data = await response.json();
 	</section>
 </dialog>
 <section
-	class="fixed h-[75px] w-full flex flex-row-reverse justify-between px-2 z-50 shadow-sm"
+	class="fixed h-[60px] w-full flex items-center flex-row-reverse justify-between px-2 z-50 bg-[#ededed]"
 	id="section-burger">
-	<button class="burgerBtn">
-		<img src={openBurger.src} alt="open image" class="openBtn" />
+	<button class="burgerBtn pr-4">
+		<img
+			src={openBurger.src}
+			alt="open image"
+			class="openBtn drop-shadow-sm"
+		/>
 	</button>
-	<div class="flex gap-1">
+	<div class="flex gap-1 pt-2">
 		<img
 			src={logo.src}
 			class="max-w-[100px] object-contain"
@@ -110,9 +114,9 @@ const data = await response.json();
 </script>
 
 <style>
-	#section-burger {
+	/* #section-burger {
 		backdrop-filter: blur(10px) saturate(180%);
-	}
+	} */
 	section li {
 		list-style: none;
 		margin-block: 0.75rem;

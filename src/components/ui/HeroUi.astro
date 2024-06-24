@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import banner from "../../img/banner.jpg";
-import banner_mobile from "../../img/prueba.jpg";
+import banner_mobile from "../../img/banner_mobile.jpg";
 import upArrow from "../../icons/upArrow.svg";
+import button from "../../img/button.jpg";
 
 import triple from "../../img/triple.png";
 import Slider from "../ui/Slider.astro";
@@ -20,11 +21,20 @@ const data = await response.json();
 ---
 
 <section
-	class="flex flex-col justify-between overflow-hidden h-screen relative">
+	class="flex flex-col justify-end sm:justify-between overflow-hidden h-screen relative">
 	<div class="w-full">
-		<Image src={banner} alt="Banner" class="banner hidden md:block" />
-		<Image src={banner_mobile} alt="Banner" class="banner md:hidden w-full h-full object-cover" />
+		<Image src={banner} alt="Banner" class="banner hidden sm:block" />
+		<Image
+			src={banner_mobile}
+			alt="Banner"
+			class="banner sm:hidden w-full h-full object-cover"
+		/>
 	</div>
+	<a
+		href={data.tienda_url}
+		class="block p-0 m-0 sm:hidden hover:scale-105 transition hover:shadow">
+		<img src={button.src} alt="button image" />
+	</a>
 	<!-- <article class="my-auto">
 		<img
 			class="burger"
@@ -66,7 +76,7 @@ const data = await response.json();
 		</div>
 	</article> -->
 
-	<div class=" overflow-hidden max-w-screen md:absolute bottom-24">
+	<div class="overflow-hidden max-w-screen md:absolute bottom-24">
 		<Slider text="the burger vilas" text2="smashbuergers since 2020" />
 	</div>
 	<a
@@ -101,9 +111,6 @@ const data = await response.json();
 	}
 
 	@media (max-width: 1150px) {
-		.banner {
-			padding-top: 75px;
-		}
 	}
 	#titulo {
 		font-family: "LeagueGothic";

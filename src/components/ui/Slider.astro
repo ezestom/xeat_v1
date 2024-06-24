@@ -8,7 +8,7 @@ const { text, text2 } = Astro.props;
 ---
 
 <article class="text-5xl md:text-[6vw] overflow-hidden">
-	<div class="slider-container hidden md:block">
+	<div class="slider-container">
 		<p class="mx-4 tracking-wide font-bold uppercase flex text-nowrap">
 			<span class="empty-text">{text}</span>
 			{"·"}{text2}
@@ -97,5 +97,10 @@ const { text, text2 } = Astro.props;
 		/* color: rgba(0, 0, 0, 0); 
 		-webkit-text-stroke: 1px var(--black); 
 		text-stroke-width: 1px;  */
+	}
+	@media (max-width: 768px) {
+		article > div {
+			animation: slide 600s linear infinite;
+		}
 	}
 </style>
