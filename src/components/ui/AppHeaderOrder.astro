@@ -8,7 +8,7 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<header class="shadow-sm z-50 w-full" id="top">
+<header class="shadow-sm z-50 flex justify-around" id="top">
 	<h1 class="">
 		<a
 			href="/"
@@ -21,39 +21,6 @@ const data = await response.json();
 			/>
 		</a>
 	</h1>
-	<nav>
-		<li>
-			<a
-				target="_blank"
-				href={data.tienda_url}
-				class="uppercase text-nowrap bg-[red] text-[--white] hover:bg-red-600 transition py-2 px-4 inline-block">
-				hacé tu pedido
-			</a>
-		</li>
-		<!-- <li>
-			<a class="a" href="/faqs">
-				<span class="hover-animation">faqs</span>
-			</a>
-		</li> -->
-	</nav>
-	<!-- <span class="my-auto flex gap-2">
-			<a
-				href={`https://www.instagram.com/${data.redes_sociales[0].instagram.slice(1)}`}
-				target="_blank">
-				<img
-					src={instagram.src}
-					alt="instagram logo"
-					class="hover:scale-105 transition my-auto"
-				/>
-			</a>
-			<a target="_blank" href={`https://wa.me/${data.whatsapp.numero}`}>
-				<img
-					src={whatsapp.src}
-					alt="instagram logo"
-					class="hover:scale-105 transition my-auto"
-				/></a
-			>
-		</span> -->
 </header>
 
 <style>
@@ -62,7 +29,6 @@ const data = await response.json();
 		position: sticky;
 		z-index: 20;
 		display: flex;
-		justify-content: space-between;
 		margin: auto;
 		padding: 1rem;
 	}
@@ -122,7 +88,7 @@ const data = await response.json();
 
 	/* hover animaation */
 	@media (max-width: 768px) {
-		a > img{
+		a > img {
 			max-width: 100px;
 		}
 	}

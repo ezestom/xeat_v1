@@ -66,9 +66,10 @@ const MapComp = () => {
 		<section className="map-section">
 			<article>
 				<div className="sucursal-container">
-					<h4 className="text-white">Sucursales</h4>
+					<h4 className="text-white text-xl">Sucursales: </h4>
 					<div className="select-container">
 						<select
+							className="py-2"
 							value={selectedOption}
 							onChange={handleSelectChange}
 							defaultValue="0">
@@ -83,6 +84,12 @@ const MapComp = () => {
 							))}
 						</select>
 					</div>
+					<button
+						className="order hover:scale-105 transition bg-[#FF0000] text-white px-4 py-2 "
+						onClick={() => handleRedirect()}>
+						{" "}
+						Hacer mi pedido
+					</button>
 				</div>
 				{!isLoaded ? (
 					<div className="spinner"></div>
@@ -104,10 +111,6 @@ const MapComp = () => {
 						</GoogleMap>
 					</div>
 				)}
-				{/* <button className="order" onClick={() => handleRedirect()}>
-					{" "}
-					Hacer mi pedido
-				</button> */}
 			</article>
 		</section>
 	);
