@@ -7,24 +7,24 @@ import Promotion from "../components/sections/Promotion.astro";
 import Layout from "../layouts/Layout.astro";
 import FooterSection from "../components/sections/FooterSection.astro";
 import KnowUs from "../components/sections/KnowUs.astro";
+import Fries from "../components/sections/Fries.astro";
 ---
 
 <Layout title="🍔🍟🥤 THE BURGER VILAS, bienvenidos !  ">
 	<header>
 		<Hero />
 	</header>
-	<main>
+	<main class="max-w-full overflow-x-hidden">
+		<Fries />
+		<!-- 
 		<FoodSelect />
 		<Promotion />
-		<ComboSelect />
-		<KnowUs/>
+		<ComboSelect /> -->
+		<KnowUs />
 	</main>
 	<footer>
-		<Instagram />
 		<FooterSection />
 	</footer>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>

@@ -25,35 +25,37 @@ const data = await response.json();
 					</button>
 				</form>
 			</li>
-			<li>
-				<a class="max-w-56" href="/">
-					<img src={data.logo_url} alt="logo " />
-				</a>
-			</li>
-			<li>
-				<a class="a" href="#smashburgers">
-					<span class="hover-animation">smashburgers</span></a
-				>
-			</li>
-			<li>
-				<a class="a" href="#fries">
-					<span class="hover-animation">tbv fries</span></a
-				>
-			</li>
+			<ul class="mt-14">
+				<li>
+					<a class="max-w-64" href="/" class="">
+						<img src={data.logo_url} alt="logo " />
+					</a>
+				</li>
+				<li>
+					<a class="a" href="#smashburgers">
+						<span class="hover-animation">smashburgers</span></a
+					>
+				</li>
+				<li>
+					<a class="a" href="#fries">
+						<span class="hover-animation">tbv fries</span></a
+					>
+				</li>
 
-			<li>
-				<a class="a" href="#know-us">
-					<span class="hover-animation">conócenos</span>
-				</a>
-			</li>
-			<li>
-				<a
-					target="_blank"
-					href="https://www.mercadolibre.com"
-					class="uppercase text-nowrap text-white bg-[red] hover:bg-red-600 transition py-2 px-4 inline-block">
-					hacer pedido
-				</a>
-			</li>
+				<li>
+					<a class="a" href="#know-us">
+						<span class="hover-animation">conócenos</span>
+					</a>
+				</li>
+				<li>
+					<a
+						target="_blank"
+						href={data.tienda_url}
+						class="uppercase text-nowrap text-white bg-[red] hover:bg-red-600 transition py-2 px-4 inline-block">
+						hacer pedido
+					</a>
+				</li>
+			</ul>
 			<!-- <li>
 			<a class="a" href="/faqs">
 				<span class="hover-animation">faqs</span>

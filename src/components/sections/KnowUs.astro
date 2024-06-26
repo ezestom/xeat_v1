@@ -1,60 +1,11 @@
 ---
-import AppHeader from "../ui/AppHeader.astro";
-import Slider from "../ui/Slider.astro";
-import Layout from "../../layouts/Layout.astro";
-import Instagram from "./Instagram.astro";
-import FooterSection from "./FooterSection.astro";
-
-const response = await fetch(
-	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
-);
-const data = await response.json();
+import { Image } from "astro:assets";
+import usMobile from "../../img/usMobile.jpg";
+import usDesktop from "../../img/usDesktop.jpg";
 ---
 
-<Layout title="Conocénos - 🍔 los mejores">
-	<!-- <AppHeader />
-	<div class="pt-24">
-		<Slider text="somos" text2="tbv" />
-	</div> -->
-	<section class="flex flex-col-reverse md:flex-row-reverse" id="know-us">
-		<article class="flex flex-col md:pt-20 w-full md:w-1/2">
-			<div class="max-w-[85%] md:max-w-[75%] mx-auto">
-				<h1
-					class="text-3xl md:text-6xl uppercase text-black leading-[0.9] font-semibold my-5">
-					{data.nosotros.titulo}
-				</h1>
-				<p class="pt-10 text-base md:text-2xl font-normal mb-10">
-					{data.nosotros.descripcion}
-				</p>
-			</div>
-		</article>
-		<article class="w-full md:w-1/2">
-			<div class="container">
-				<img
-					class="photo"
-					src={data.nosotros.url_imagen}
-					alt=`image of ${data.nosotros.url_imagen}`
-				/>
-			</div>
-		</article>
-	</section>
-	<!-- <Instagram />
-	<FooterSection /> -->
-</Layout>
-
-<style>
-	.container {
-		/* position: relative; */
-		width: 100%;
-		height: 100%;
-		/* create a gradient mask transparent to top  */
-		mask-image: linear-gradient(to bottom, transparent 0%, black 25%);
-	}
-	/* .photo {
-		position: absolute;
-		animation: round var(--total-animation-time) infinite;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	} */
-</style>
+<section class="" id="know-us">
+	<Image src={usMobile} alt="us" class="block sm:hidden" />
+	<Image src={usDesktop} alt="us" class="sm:block hidden" />
+</section>
+<style></style>

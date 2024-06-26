@@ -5,13 +5,13 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<section class="flex items-center justify-around">
+<section class="flex items-center justify-around bg-black text-white">
 	<div class="flex flex-col text-center md:w-1/2">
 		<p
-			class="text-4xl my-2 md:text-7xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
+			class="text-2xl my-2 md:text-5xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
 			{data.nombre}
 		</p>
-		<p class="text-2xl font-semibold">
+		<p class="text-xl font-semibold">
 			{data.direccion}
 		</p>
 	</div>
@@ -21,31 +21,31 @@ const data = await response.json();
 		<div
 			class="flex flex-col md:flex-row items-start gap-5 md:gap-10 flex-wrap">
 			<ul class="">
-				<h3 class="uppercase text-3xl">tbv</h3>
-				<li class="md:py-3 hover:underline">
+				<h3 class="uppercase text-xl">tbv</h3>
+				<li class="md:py-3 text-sm hover:underline">
 					<a href="/smashburgers">Burgers</a>
 				</li>
-				<li class="md:py-3 hover:underline">
+				<li class="md:py-3 text-sm hover:underline">
 					<a href="/fries">Fries</a>
 				</li>
-				<li class="md:py-3 hover:underline">
+				<li class="md:py-3 text-sm hover:underline">
 					<a href={data.tienda_url}>Hacer pedido</a>
 				</li>
 			</ul>
 
 			<ul class="">
-				<h3 class="uppercase text-3xl">contacto</h3>
-				<li class="md:py-3 hover:underline">
+				<h3 class="uppercase text-xl">contacto</h3>
+				<li class="md:py-3 text-sm hover:underline">
 					<a type="phone" href={`tel:${data.phone}`}>Teléfono</a>
 				</li>
-				<li class="md:py-3 hover:underline">
+				<li class="md:py-3 text-sm hover:underline">
 					<a
 						target="_blank"
 						href={`https://wa.me/${data.whatsapp[0].numero}`}
 						>Whatsapp</a
 					>
 				</li>
-				<li class="md:py-3 hover:underline">
+				<li class="md:py-3 text-sm hover:underline">
 					<a
 						href={`https://www.instagram.com/${data.redes_sociales[0].instagram.slice(1)}`}
 						target="_blank">Instagram</a
@@ -54,14 +54,14 @@ const data = await response.json();
 			</ul>
 
 			<ul class="">
-				<h3 class="uppercase text-3xl">legal</h3>
-				<li class="md:py-3 hover:underline">
+				<h3 class="uppercase text-xl">legal</h3>
+				<li class="md:py-3 text-sm hover:underline">
 					<a href="#">Política de privacidad</a>
 				</li>
-				<li class="md:py-3 hover:underline">
+				<li class="md:py-3 text-sm hover:underline">
 					<a href="#">Aviso Legal</a>
 				</li>
-				<li class="md:py-3 hover:underline">
+				<li class="md:py-3 text-sm hover:underline">
 					<a href="#">Política de cookies</a>
 				</li>
 			</ul>

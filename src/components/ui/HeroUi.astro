@@ -3,7 +3,8 @@ import { Image } from "astro:assets";
 import banner from "../../img/banner.jpg";
 import banner_mobile from "../../img/banner_mobile.jpg";
 import upArrow from "../../icons/upArrow.svg";
-import button from "../../img/button.jpg";
+import deliveryButtonMobile from "../../img/deliveryButtonMobile.jpg";
+import deliveryButtonDesktop from "../../img/deliveryButtonDesktop.jpg";
 
 import triple from "../../img/triple.png";
 import Slider from "../ui/Slider.astro";
@@ -20,27 +21,35 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<section
-	class="flex flex-col justify-between overflow-hidden relative pt-[45px] md:pt-0 sm:max-h-screen h-full">
+<section class="flex flex-col justify-between pt-[45px] md:pt-0 h-auto" id="smashburgers">
 	<div class="w-full h-auto">
-		<Image src={banner} alt="Banner" class="banner hidden xl:block" />
+		<Image src={banner} alt="Banner" class="banner hidden sm:block h-full object-cover" />
 		<Image
 			src={banner_mobile}
 			alt="Banner"
-			class="banner xl:hidden max-w-full h-auto mx-auto"
+			class="banner sm:hidden w-full h-auto mx-auto"
 		/>
 	</div>
-	<a
-		href={data.tienda_url}
-		class="block p-0 m-0 md:hidden hover:scale-105 transition hover:shadow">
-		<img src={button.src} alt="button image" />
-	</a>
-	<div class="overflow-hidden max-w-screen md:absolute bottom-24 py-5 md:py-0">
+	<div class="sm:py-2 max-w-screen">
 		<Slider
 			text="SMASHBURGERS SINCE 2020"
 			text2="SMASHBURGERS SINCE 2020"
 		/>
 	</div>
+	<a
+		href={data.tienda_url}
+		class="block hover:brightness-200 transition hover:shadow relative">
+		<img
+			src={deliveryButtonMobile.src}
+			alt="button image"
+			class="md:hidden block"
+		/>
+		<img
+			src={deliveryButtonDesktop.src}
+			alt="button image"
+			class="md:block hidden"
+		/>
+	</a>
 	<!-- <article class="my-auto">
 		<img
 			class="burger"

@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import friesMobile from "../../img/friesMobile.jpg";
+import friesDesktop from "../../img/friesDesktop.jpg";
+import moreButtonMobile from "../../img/moreButtonMobile.jpg";
+import moreButtonDesktop from "../../img/moreButtonDesktop.jpg";
+
+const response = await fetch(
+	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
+);
+const data = await response.json();
+---
+
+<section class="sm:pt-[45px]" id="fries">
+	<article class="">
+		<Image
+			src={friesMobile}
+			alt="fries wallpaper"
+			class="block sm:hidden"
+		/>
+		<Image
+			src={friesDesktop}
+			alt="fries wallpaper"
+			class="sm:block hidden"
+		/>
+		<a
+			href={data.tienda_url}
+			class="hover:brightness-200 w-full block transition hover:shadow">
+			<img
+				src={moreButtonMobile.src}
+				alt="more button"
+				class="sm:hidden block"
+			/>
+			<img
+				src={moreButtonDesktop.src}
+				alt="more button"
+				class="sm:block hidden"
+			/>
+		</a>
+	</article>
+</section>
