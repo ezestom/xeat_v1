@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AppHeaderOrder from "../components/ui/AppHeaderOrder.astro";
+import FooterSection from "../components/sections/FooterSection.astro";
+import MapComp from "../components/Map/MapComp.jsx";
+---
+
+<Layout title="Quiero hacer mi pedido">
+	<AppHeaderOrder />
+	<section class="">
+		<!-- <button class="subButton">Lo paso a buscar</button> -->
+
+		<MapComp client:load />
+	</section>
+	<FooterSection />
+</Layout>

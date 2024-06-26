@@ -37,7 +37,7 @@ const data = await response.json();
 		/>
 	</div>
 	<a
-		href={data.tienda_url}
+		href="/make-an-order"
 		class="block hover:brightness-200 transition hover:shadow relative">
 		<img
 			src={deliveryButtonMobile.src}
@@ -91,12 +91,12 @@ const data = await response.json();
 		</div>
 	</article> -->
 
-	<a
+	<!-- <a
 		target="_blank"
 		class="fixed bottom-2 right-2 max-w-14 z-50 hover:scale-105 transition-transform duration-300 ease-in-out"
 		href={`https://wa.me/${data.whatsapp[0].numero}`}
 		><img src={whatsapp.src} alt="whatsapp image" class="z-80" /></a
-	>
+	> -->
 	<a
 		class="fixed bottom-2 left-2 max-w-14 z-50 hover:scale-105 transition-transform duration-300 ease-in-out opacity-0"
 		href="#top"
@@ -104,7 +104,7 @@ const data = await response.json();
 		><img
 			src={upArrow.src}
 			alt="top image"
-			class="z-80 bg-[#ededed] rounded-full shadow-md"
+			class="z-80 bg-[#fafafa] rounded-full shadow-xl"
 		/></a
 	>
 </section>

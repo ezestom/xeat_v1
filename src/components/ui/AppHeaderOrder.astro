@@ -8,7 +8,7 @@ const response = await fetch(
 const data = await response.json();
 ---
 
-<header class="shadow-sm  z-50 w-full " id="top">
+<header class="shadow-sm z-50 w-full" id="top">
 	<h1 class="">
 		<a
 			href="/"
@@ -23,25 +23,9 @@ const data = await response.json();
 	</h1>
 	<nav>
 		<li>
-			<a class="a" href="#smashburgers">
-				<span class="hover-animation">smashburgers</span></a
-			>
-		</li>
-
-		<li>
-			<a class="a" href="#fries">
-				<span class="hover-animation">tbv fries</span></a
-			>
-		</li>
-
-		<li>
-			<a class="a" href="#know-us">
-				<span class="hover-animation">conócenos</span>
-			</a>
-		</li>
-		<li>
 			<a
-				href="/make-an-order"
+				target="_blank"
+				href={data.tienda_url}
 				class="uppercase text-nowrap bg-[red] text-[--white] hover:bg-red-600 transition py-2 px-4 inline-block">
 				hacé tu pedido
 			</a>
@@ -138,8 +122,8 @@ const data = await response.json();
 
 	/* hover animaation */
 	@media (max-width: 768px) {
-		header {
-			display: none;
+		a > img{
+			max-width: 100px;
 		}
 	}
 </style>
