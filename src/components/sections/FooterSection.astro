@@ -1,19 +1,24 @@
 ---
+import logo from "../../img/tvb.png";
 const response = await fetch(
 	"https://us-east4.gcp.data.mongodb-api.com/app/home-ybjtf/endpoint/210"
 );
 const data = await response.json();
 ---
 
-<section class="flex items-center justify-around bg-black text-white">
-	<div class="flex flex-col text-center md:w-1/2">
-		<p
-			class="text-2xl my-2 md:text-5xl uppercase whitespace-nowrap font-black m-auto text-center w-full">
-			{data.nombre}
-		</p>
-		<p class="text-xl font-semibold">
-			{data.direccion}
-		</p>
+<section class="flex items-center justify-around py-10 bg-black text-white">
+	<div class="flex justify-center text-center md:w-1/2">
+		<a href="#top">
+			<img
+				src={logo.src}
+				class="logoTvb max-w-[150px] md:max-w-[250px] filter"
+				alt="logo image"
+			/>
+			<p>
+				<span class="text-base md:text-2xl">The Burger Vilas</span>
+				<br />
+			</p>
+		</a>
 	</div>
 
 	<article
@@ -21,22 +26,48 @@ const data = await response.json();
 		<div
 			class="flex flex-col md:flex-row items-start gap-5 md:gap-10 flex-wrap">
 			<ul class="">
-				<h3 class="uppercase text-xl">tbv</h3>
+				<h3 class="uppercase text-xl">Local Malvin</h3>
 				<li class="md:py-3 text-sm hover:underline">
-					<a href="#smashburgers">Burgers</a>
+					<a
+						href="https://maps.app.goo.gl/gQWjdpeY6CpLpkfP7"
+						target="_blank">Av. Italia 4697</a
+					>
+				</li>
+				<li class="md:py-3 text-sm">
+					<p>Domingos a Jueves de 19:00 a 00:00</p>
+				</li>
+				<li class="md:py-3 text-sm">
+					<p>Viernes y Sábados de 19:00 a 01:00</p>
 				</li>
 				<li class="md:py-3 text-sm hover:underline">
-					<a href="#fries">Fries</a>
-				</li>
-				<li class="md:py-3 text-sm hover:underline">
-					<a href="/make-an-order">Hacer pedido</a>
+					<a target="_blank" href="tel:+095227958">Tel: 095227958 </a>
 				</li>
 			</ul>
-
 			<ul class="">
-				<h3 class="uppercase text-xl">contacto</h3>
+				<h3 class="uppercase text-xl">Local Pocitos</h3>
 				<li class="md:py-3 text-sm hover:underline">
-					<a type="phone" href={`tel:${data.phone}`}>Teléfono</a>
+					<a
+						href="https://maps.app.goo.gl/AxENjAKhFV6rWkkq5"
+						target="_blank">Av. Luis Alberto de Herrera 1154</a
+					>
+				</li>
+				<li class="md:py-3 text-sm">
+					<p>Domingos a Jueves de 12:00 a 00:00</p>
+				</li>
+				<li class="md:py-3 text-sm">
+					<p>Viernes y Sábados de 12:00 a 01:00</p>
+				</li>
+				<li class="md:py-3 text-sm hover:underline">
+					<a target="_blank" href="tel:+093763298">Tel: 093763298</a>
+				</li>
+			</ul>
+			<ul class="">
+				<h3 class="uppercase text-xl">contactos</h3>
+				<li class="md:py-3 text-sm hover:underline">
+					<a
+						href={`https://www.instagram.com/${data.redes_sociales[0].instagram.slice(1)}`}
+						target="_blank">Instagram</a
+					>
 				</li>
 				<li class="md:py-3 text-sm hover:underline">
 					<a
@@ -45,34 +76,18 @@ const data = await response.json();
 						>Whatsapp</a
 					>
 				</li>
-				<li class="md:py-3 text-sm hover:underline">
-					<a
-						href={`https://www.instagram.com/${data.redes_sociales[0].instagram.slice(1)}`}
-						target="_blank">Instagram</a
-					>
-				</li>
-			</ul>
-
-			<ul class="">
-				<h3 class="uppercase text-xl">legal</h3>
-				<li class="md:py-3 text-sm hover:underline">
-					<a href="#">Política de privacidad</a>
-				</li>
-				<li class="md:py-3 text-sm hover:underline">
-					<a href="#">Aviso Legal</a>
-				</li>
-				<li class="md:py-3 text-sm hover:underline">
-					<a href="#">Política de cookies</a>
-				</li>
 			</ul>
 		</div>
-		<a target="_blank" href="/" class="hover:underline mt-5"
+		<a target="_blank" href="/" class="hover:underline pt-5 text-sm"
 			>2024 © TBV - THE BURGER VILAS
 		</a>
 	</article>
 </section>
 
 <style>
+	.logoTvb {
+		filter: invert(1);
+	}
 	@media (max-width: 1150px) {
 		section {
 			flex-direction: column;
